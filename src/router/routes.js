@@ -34,6 +34,11 @@ export default [{
       component: require('../views/position')
     },
     {
+      name: 'sizing',
+      path: '/sizing',
+      component: require('../views/sizing')
+    },
+    {
       name: 'typography',
       path: '/typography',
       component: require('../views/typography')
