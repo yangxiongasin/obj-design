@@ -22,11 +22,19 @@ export default {
   data () {
     return {
       iscur: 0,
-      isName: 'Color 颜色',
+      isName: 'Border 边框与圆角',
       menuList: [
+        {
+          name: 'Border 边框与圆角',
+          src: 'border'
+        },
         {
           name: 'Color 颜色',
           src: 'color'
+        },
+        {
+          name: 'Cursor 光标类型',
+          src: 'cursor'
         },
         {
           name: 'Display 显示方式',
@@ -49,6 +57,10 @@ export default {
           src: 'sizing'
         },
         {
+          name: 'Space 边距',
+          src: 'space'
+        },
+        {
           name: 'Typography 文字',
           src: 'typography'
         }
@@ -56,7 +68,7 @@ export default {
     }
   },
   mounted () {
-    this.$router.replace({name: 'color'})
+    this.$router.replace({name: 'border'})
   },
   methods: {
     $on_toggleLi (data, index) {

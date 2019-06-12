@@ -10,6 +10,11 @@ export default [
     component: require('../views/index.vue'),
     children: [
       {
+        name: 'border',
+        path: '/border',
+        component: require('../views/border')
+      },
+      {
         name: 'flex',
         path: '/flex',
         component: require('../views/flex')
@@ -30,6 +35,11 @@ export default [
         component: require('../views/color')
       },
       {
+        name: 'cursor',
+        path: '/cursor',
+        component: require('../views/cursor')
+      },
+      {
         name: 'position',
         path: '/position',
         component: require('../views/position')
@@ -38,6 +48,11 @@ export default [
         name: 'sizing',
         path: '/sizing',
         component: require('../views/sizing')
+      },
+      {
+        name: 'space',
+        path: '/space',
+        component: require('../views/space')
       },
       {
         name: 'typography',
