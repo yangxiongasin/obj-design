@@ -9,8 +9,11 @@
         class="menu__item"
       >{{ item.name }}</li>
     </ul>
-    <router-view></router-view>
+    <div  class=" menu--right" style="flex: auto;">
+      <h1>{{ isName }}</h1>
+      <router-view></router-view>
     </div>
+  </div>
 </template>
 
 <script>
@@ -19,7 +22,7 @@ export default {
   data () {
     return {
       iscur: 1,
-      isName: 'flex布局',
+      isName: '',
       menuList: [
         {
           name: 'flex布局',
@@ -38,6 +41,10 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    this.iscur = this.menuList[0].value
+    this.isName = this.menuList[0].name
   },
   methods: {
     $on_toggleLi (data) {
