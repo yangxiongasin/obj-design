@@ -10,7 +10,7 @@
       >{{ item.name }}</li>
     </ul>
     <router-view></router-view>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -19,14 +19,15 @@ export default {
   data () {
     return {
       iscur: 1,
+      isName: 'flex布局',
       menuList: [
         {
-          name: 'flex111',
+          name: 'flex布局',
           src: 'flex',
           value: 0
         },
         {
-          name: 'color11',
+          name: 'color样式',
           src: 'color',
           value: 1
         },
@@ -41,7 +42,8 @@ export default {
   methods: {
     $on_toggleLi (data) {
       this.iscur = data.value
-      this.$router.replace({ name: data.src })
+      this.isName = data.name
+      this.$router.replace({name: data.src})
     }
   }
 }

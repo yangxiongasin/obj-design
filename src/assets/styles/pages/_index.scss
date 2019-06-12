@@ -3,7 +3,7 @@
 **/
 
 @import "common";
-
+@import "flex";
 
 .menu--light{
 	width: 250px;
@@ -22,4 +22,7 @@
 	position: relative;
 	padding: 0 20px;
 	border-right: 3px solid transparent;
+}
+.menu--right{
+	padding: 25px 45px;
 }
