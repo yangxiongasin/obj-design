@@ -14,6 +14,16 @@ export default [{
       component: require('../views/flex')
     },
     {
+      name: 'display',
+      path: '/display',
+      component: require('../views/display')
+    },
+    {
+      name: 'float',
+      path: '/float',
+      component: require('../views/float')
+    },
+    {
       name: 'color',
       path: '/color',
       component: require('../views/color')
