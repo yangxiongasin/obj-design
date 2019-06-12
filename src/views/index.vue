@@ -11,7 +11,6 @@
     </ul>
     <div  class=" menu--right" style="flex: auto;">
       <div class="font-38">{{ isName }}</div>
-      <obj-table :thead-data="['1', '2']" :tbody-data="[[1,2], [3,4]]"></obj-table>
       <router-view></router-view>
     </div>
   </div>
@@ -55,6 +54,9 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    this.$router.replace({name: 'color'})
   },
   methods: {
     $on_toggleLi (data, index) {
