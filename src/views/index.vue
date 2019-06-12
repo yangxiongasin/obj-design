@@ -1,12 +1,18 @@
 <template>
   <div class="d-flex">
     <ul class="menu--light">
-      <li v-for="item in menuList" :key="'menu' + item.value"
+      <li
+        v-for="item in menuList"
+        :key="'menu' + item.value"
         :class="{'menu__item--checked': iscur === item.value}"
         @click="$on_toggleLi(item)"
-        class="menu__item">{{ item.name }}</li>
+        class="menu__item"
+      >{{ item.name }}</li>
     </ul>
-    <div class="d-flex" style="flex: auto;">
+    <div
+      class="d-flex"
+      style="flex: auto;"
+    >
       1
       <router-view></router-view>
     </div>
@@ -29,6 +35,11 @@ export default {
           name: 'color11',
           src: 'color',
           value: 1
+        },
+        {
+          name: 'position1',
+          src: 'position',
+          value: 2
         }
       ]
     }
@@ -36,7 +47,7 @@ export default {
   methods: {
     $on_toggleLi (data) {
       this.iscur = data.value
-      this.$router.replace({name: data.src})
+      this.$router.replace({ name: data.src })
     }
   }
 }
