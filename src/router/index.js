@@ -10,11 +10,6 @@ import routes from './routes'
 // 注册路由插件
 Vue.use(VueRouter)
 
-let title = function (title) {
-  title = title || '开源软件管理'
-  window.document.title = title
-}
-
 const router = new VueRouter({
   mode: 'history',
   routes,
@@ -27,7 +22,6 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  title(to.meta.title)
   next()
 })
 
