@@ -7,7 +7,6 @@
         class="menu__item">{{ item.name }}</li>
     </ul>
     <div class="d-flex" style="flex: auto;">
-      1
       <router-view></router-view>
     </div>
   </div>
