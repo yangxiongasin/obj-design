@@ -1,13 +1,13 @@
 <template>
-  <div class="d-flex pad-24 w-100">
+  <div class="d-flex p-24 w-100">
     <div class="color-bg">
       <div class="color-left">
         <h1 class="title">背景色</h1>
-        <div class="d-flex jus-bew w-100 align-cen">
+        <div class="d-flex justify-content-between w-100 align-cen">
           <div v-for="item in bgColorList"
                :key="item.name"
-               class="d-flex flex-flow-column bg-box align-cen">
-            <div :class="[item.className, 'bg-box-color', 'bd-radius-50', 'box-shador']"></div>
+               class="bg-box d-flex flex-flow-column-nowrap justify-align-center">
+            <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'box-shador']"></div>
             <div class="bg-box-name">{{item.name}}</div>
             <div>{{item.value}}</div>
           </div>
@@ -15,12 +15,12 @@
       </div>
       <div class="color-right">
         <h3 class="title">背景灰色/Backgroud Greys</h3>
-        <div class="d-flex flex-flow-c">
+        <div class="d-flex flex-flow-column-nowrap">
           <!--<div v-for="item in bgColorGreys"-->
                <!--:key="item.name"-->
                 <!--class="bg-box d-flex">-->
             <!--<div :class="[item.value, 'bg-box-color']"></div>-->
-            <!--<div>{{}}</div>-->
+            <!--<div>{{item}}</div>-->
           <!--</div>-->
         </div>
       </div>
@@ -62,12 +62,12 @@ export default {
       ],
       bgColorGreys: [
         {
-          name: '深色/bg-dark',
-          className: 'bg-dark',
+          name: 'Lighter (用法 纯色背景)',
+          className: 'bg-grey',
           value: '#F8F9FB'
         }, {
-          name: '深色/bg-dark',
-          className: 'bg-dark',
+          name: 'Light（用法： 列表悬停和纯色背景）不透明5%',
+          className: 'bg-grey',
           value: '#212434'
         }, {
           name: '深色/bg-dark',
