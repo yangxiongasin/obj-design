@@ -16,12 +16,12 @@
       <div class="color-right">
         <h3 class="title">背景灰色/Backgroud Greys</h3>
         <div class="d-flex flex-flow-column-nowrap">
-          <!--<div v-for="item in bgColorGreys"-->
-               <!--:key="item.name"-->
-                <!--class="bg-box d-flex">-->
-            <!--<div :class="[item.value, 'bg-box-color']"></div>-->
-            <!--<div>{{item}}</div>-->
-          <!--</div>-->
+          <div v-for="item in bgColorGreys"
+               :key="item.name"
+                class="bg-box d-flex">
+            <div :class="[item.value, 'bg-box-color']"></div>
+            <div>{{item}}</div>
+          </div>
         </div>
       </div>
     </div>
