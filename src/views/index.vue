@@ -11,6 +11,7 @@
     </ul>
     <div  class=" menu--right" style="flex: auto;">
       <div class="font-38">{{ isName }}</div>
+      <obj-table :thead-data="['1', '2']" :tbody-data="[[1,2], [3,4]]"></obj-table>
       <router-view></router-view>
     </div>
   </div>
@@ -22,7 +23,7 @@ export default {
   data () {
     return {
       iscur: 0,
-      isName: 'Display 显示方式',
+      isName: 'Color 颜色',
       menuList: [
         {
           name: 'Color 颜色',
