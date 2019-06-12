@@ -1,8 +1,17 @@
 .d-flex{
 	display: flex;
 }
+.flex-flow-column-nowrap {
+  flex-flow: column nowrap;
+}
 .justify-content-center{
 	justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
 }
 .justify-align-center{
 	justify-content: center;

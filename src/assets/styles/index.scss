@@ -16,7 +16,10 @@
 // 项目自定义可复用模块样式
 @import "moudule";
 
-// 项目页面样式
+// 项目公共样式
 @import "pages/index";
 @import "pages/color";
+@import "pages/size";
 
+// 项目页面样式
+@import "views/color";
