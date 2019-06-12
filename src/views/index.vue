@@ -1,16 +1,16 @@
 <template>
   <div class="d-flex">
-    <ul class="menu--light">
+    <ul class="menu--light font-14">
       <li
-        v-for="item in menuList"
-        :key="'menu' + item.value"
-        :class="{'menu__item--checked': iscur === item.value}"
-        @click="$on_toggleLi(item)"
+        v-for="(item, index) in menuList"
+        :key="'menu' + index"
+        :class="{'menu__item--checked': iscur === index}"
+        @click="$on_toggleLi(item, index)"
         class="menu__item"
       >{{ item.name }}</li>
     </ul>
     <div  class=" menu--right" style="flex: auto;">
-      <h1>{{ isName }}</h1>
+      <div class="font-38">{{ isName }}</div>
       <router-view></router-view>
     </div>
   </div>
@@ -21,34 +21,31 @@ export default {
   name: '',
   data () {
     return {
-      iscur: 1,
-      isName: '',
+      iscur: 0,
+      isName: 'flex布局',
       menuList: [
         {
-          name: 'flex布局',
-          src: 'flex',
-          value: 0
+          name: 'flex 弹性盒子',
+          src: 'flex'
         },
         {
-          name: 'color样式',
-          src: 'color',
-          value: 1
+          name: 'Color颜色',
+          src: 'color'
         },
         {
-          name: 'position1',
-          src: 'position',
-          value: 2
+          name: 'Position 位置',
+          src: 'position'
+        },
+        {
+          name: 'Typography 文字',
+          src: 'typography'
         }
       ]
     }
   },
-  mounted () {
-    this.iscur = this.menuList[0].value
-    this.isName = this.menuList[0].name
-  },
   methods: {
-    $on_toggleLi (data) {
-      this.iscur = data.value
+    $on_toggleLi (data, index) {
+      this.iscur = index
       this.isName = data.name
       this.$router.replace({name: data.src})
     }

@@ -7,21 +7,27 @@ export default [{
   name: 'login',
   path: '/',
   component: require('../views/index.vue'),
-  children: [{
-    name: 'flex',
-    path: '/flex',
-    component: require('../views/flex')
-  },
-  {
-    name: 'color',
-    path: '/color',
-    component: require('../views/color')
-  },
-  {
-    name: 'position',
-    path: '/position',
-    component: require('../views/position')
-  }
+  children: [
+    {
+      name: 'flex',
+      path: '/flex',
+      component: require('../views/flex')
+    },
+    {
+      name: 'color',
+      path: '/color',
+      component: require('../views/color')
+    },
+    {
+      name: 'position',
+      path: '/position',
+      component: require('../views/position')
+    },
+    {
+      name: 'typography',
+      path: '/typography',
+      component: require('../views/typography')
+    }
   ]
 },
 {
