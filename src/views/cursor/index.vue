@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex mt-20">
     <obj-table :thead-data="headerData" :tbody-data="bodyData"></obj-table>
   </div>
 </template>

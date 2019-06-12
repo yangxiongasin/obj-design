@@ -50,7 +50,7 @@ export default{
   }
   table th, table td{
     border: 1px solid #e9e9e9;
-    padding: 8px 16px;
+    padding: 16px 16px;
     text-align: left;
   }
   table th{
