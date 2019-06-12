@@ -1,18 +1,11 @@
-// 悬浮在顶部
-.fixed-top {
-  position: fixed;
-  top: 0;
-}
-
-// 悬浮在底部
-.fixed-bottom {
-  position: fixed;
-  bottom: 0;
-}
-
 // 相对定位
 .position-relative {
   position: relative;
+}
+
+// 固定定位
+.position-fixed {
+  position: fixed;
 }
 
 // 绝对定位
