@@ -22,19 +22,31 @@ export default {
   data () {
     return {
       iscur: 0,
-      isName: 'flex布局',
+      isName: 'Display 显示方式',
       menuList: [
+        {
+          name: 'Color 颜色',
+          src: 'color'
+        },
+        {
+          name: 'Display 显示方式',
+          src: 'display'
+        },
         {
           name: 'flex 弹性盒子',
           src: 'flex'
         },
         {
-          name: 'Color颜色',
-          src: 'color'
+          name: 'Float 浮动',
+          src: 'float'
         },
         {
           name: 'Position 位置',
           src: 'position'
+        },
+        {
+          name: 'Sizing 大小',
+          src: 'sizing'
         },
         {
           name: 'Typography 文字',
