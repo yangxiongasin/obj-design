@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex justify-align-center text-12">
     color
   </div>
 </template>

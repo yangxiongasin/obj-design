@@ -6,8 +6,8 @@
         @click="$on_toggleLi(item)"
         class="menu__item">{{ item.name }}</li>
     </ul>
-    <div class="d-flex" style="flex: auto;">
-      1
+    <div class=" menu--right" style="flex: auto;">
+      <h1 style="margin-bottom: 24px;">{{ isName }}</h1>
       <router-view></router-view>
     </div>
   </div>
@@ -19,14 +19,15 @@ export default {
   data () {
     return {
       iscur: 1,
+      isName: 'flex布局',
       menuList: [
         {
-          name: 'flex111',
+          name: 'flex布局',
           src: 'flex',
           value: 0
         },
         {
-          name: 'color11',
+          name: 'color样式',
           src: 'color',
           value: 1
         }
@@ -36,6 +37,7 @@ export default {
   methods: {
     $on_toggleLi (data) {
       this.iscur = data.value
+      this.isName = data.name
       this.$router.replace({name: data.src})
     }
   }
