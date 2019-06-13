@@ -1,39 +1,43 @@
 .border-outline {
- border: 1px solid #0C66FF;
+ border: 1px solid #E8E8E8;
 }
-.border-green {
- border: 1px solid #0BB07B;
+.border-0 {
+  border: none;
 }
-.border-red {
- border: 1px solid #F03D3D;
+.border-left {
+  border-left: 1px solid #E8E8E8;
 }
-.border-yellow {
- border: 1px solid #FFAD0D;
+.border-top {
+  border-top: 1px solid #E8E8E8;
 }
-.border-gray {
- border: 1px solid #E1E4E8;
+.border-right {
+  border-right: 1px solid #E8E8E8;
 }
-.border-darkgray {
- border: 1px solid #C9CED6;
+.border-bottom {
+  border-bottom: 1px solid #E8E8E8;
 }
-.border-black {
- border: 1px solid #C9CED6;
+.border-left-0{
+  border: 1px solid #E8E8E8;
+  border-left:  none;
 }
-.border-outline-2 {
- border: 2px solid #0C66FF;
+.border-top-0{
+  border: 1px solid #E8E8E8;
+  border-top: none;
 }
-.border-green-2 {
- border: 2px solid #0BB07B;
+.border-right-0 {
+  border: 1px solid #E8E8E8;
+  border-right: none;
 }
-.border-red-2 {
- border: 2px solid #F03D3D;
+.border-bottom-0 {
+  border: 1px solid #E8E8E8;
+  border-bottom: none;
 }
-.border-yellow-2 {
- border: 1px solid #FFAD0D;
+.border-radius-2 {
+  border-radius: 4px;
 }
-.border-gray-2 {
- border: 2px solid #E1E4E8;
+.border-radius-4 {
+  border-radius: 4px;
 }
-.border-darkgray-2 {
- border: 2px solid #C9CED6;
+.border-radius-50 {
+  border-radius: 50%;
 }

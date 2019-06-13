@@ -2,17 +2,20 @@
  * 本文件是项目color样式文件
 **/
 
-.bg-gray-1 {
+.bg-lighter {
   background: #F8F9FB;
 }
-.bg-gray-2 {
+.bg-light {
   background: rgba(130,130,130,0.05);
 }
-.bg-gray-3 {
+.bg-medium {
   background: #E8E8E8;
 }
-.bg-gray-4 {
+.bg-dark {
   background: #E1E4E8;
+}
+.shadow {
+  box-shadow: 0 0 2px 0 rgba(10,31,68,0.08), 0 9px 12px 0 rgba(10,31,68,0.10);
 }
 .gradient-blue {
   background-image: linear-gradient(180deg, #1285FF 0%, #20D1FF 100%);
