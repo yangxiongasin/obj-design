@@ -10,15 +10,15 @@
         :tbody-data="bodyData"
       ></obj-table>
     </div>
-    <div>圆角</div>
-    <div
-      class="d-flex position"
-    >
-      <obj-table
-        :thead-data="headerData"
-        :tbody-data="bodyData"
-      ></obj-table>
-    </div>
+    <!--<div>圆角</div>-->
+    <!--<div-->
+      <!--class="d-flex position"-->
+    <!--&gt;-->
+      <!--<obj-table-->
+        <!--:thead-data="headerData"-->
+        <!--:tbody-data="bodyData"-->
+      <!--&gt;</obj-table>-->
+    <!--</div>-->
   </div>
 </template>
 
