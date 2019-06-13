@@ -20,6 +20,16 @@ export default {
           `<div class="d-flex"><h1></h1><p></p></div>`
         ],
         [
+          'flex-wrap',
+          ' 换行',
+          `<div class="flex-wrap" style="width:25px"><h1></h1><p></p></div>`
+        ],
+        [
+          'flex-nowrap',
+          ' 不换行',
+          `<div class="flex-nowrap" style="width:25px"><h1></h1><p></p></div>`
+        ],
+        [
           'justify-content-center',
           ' 居中水平对齐',
           `<div class="justify-content-center"><h1></h1><p></p></div>`
