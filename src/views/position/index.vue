@@ -42,6 +42,11 @@ export default {
           'position-absolute-y',
           '该元素与body高度相同且不占位',
           `<div class="d-flex position-relative" style="border:solid 2px blue;width:20px;height:20px;box-sizing: content-box;"><p class="position-absolute-y" style="background:green;width:10px;"></p></div>`
+        ],
+        [
+          'position-absolute-x',
+          '该元素与body宽度相同且不占位',
+          `<div class="d-flex position-relative" style="border:solid 2px blue;width:20px;height:20px;box-sizing: content-box;"><p class="position-absolute-x" style="background:green;height:10px;"></p></div>`
         ]
       ]
     }
