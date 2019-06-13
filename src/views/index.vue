@@ -1,12 +1,12 @@
 <template>
   <div class="position-absolute-all ml-40">
-    <ul class="menu--light font-14 position-absolute-y pt-32">
+    <ul class="menu--light text-14 position-absolute-y pt-32 border-right">
       <li
       v-for="(item, index) in menuList"
       :key="'menu' + index"
       :class="{'menu__item--checked': iscur === index}"
       @click="$on_toggleLi(item, index)"
-      class="menu__item"
+      class="menu__item border-right-0 cursor-pointer"
       >{{ item.name }}</li>
     </ul>
     <div  class="menu--right position-absolute-all">
