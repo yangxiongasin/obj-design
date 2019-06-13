@@ -53,10 +53,6 @@ export default {
           src: 'position'
         },
         {
-          name: 'Sizing 大小',
-          src: 'sizing'
-        },
-        {
           name: 'Space 边距',
           src: 'space'
         },

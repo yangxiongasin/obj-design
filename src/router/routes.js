@@ -5,7 +5,6 @@
 
 export default [
   {
-    name: 'login',
     path: '/',
     component: require('../views/index.vue'),
     children: [
@@ -43,11 +42,6 @@ export default [
         name: 'position',
         path: '/position',
         component: require('../views/position')
-      },
-      {
-        name: 'sizing',
-        path: '/sizing',
-        component: require('../views/sizing')
       },
       {
         name: 'space',
