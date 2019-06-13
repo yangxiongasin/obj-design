@@ -12,3 +12,36 @@
 .position-absolute {
   position: absolute;
 }
+
+//
+.position-absolute-trbl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+//悬浮在顶部
+.position-fixed-top {
+  position: fixed;
+  top: 0;
+}
+
+//悬浮在底部
+.position-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+}
+
+//悬浮在左部
+.position-fixed-left {
+  position: fixed;
+  left: 0;
+}
+
+//悬浮在右部
+.position-fixed-right {
+  position: fixed;
+  right: 0;
+}
