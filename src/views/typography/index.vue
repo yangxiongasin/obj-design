@@ -94,33 +94,28 @@ export default {
         ],
         [
           'text-14',
-          '文字14px且行高22px',
-          `<p class="text-14">文字14px且行高22px</p>`
+          '文字14px且行高20px',
+          `<p class="text-14">文字14px且行高20px</p>`
         ],
         [
           'text-16',
-          '文字16px且行高24px',
-          `<p class="text-16">文字16px且行高24px</p>`
+          '文字16px且行高22px',
+          `<p class="text-16">文字16px且行高22px</p>`
         ],
         [
           'text-20',
-          '文字20px且行高28px',
-          `<p class="text-20">文字20px且行高28px</p>`
+          '文字20px且行高26px',
+          `<p class="text-20">文字20px且行高26px</p>`
         ],
         [
           'text-24',
-          '文字24px且行高32px',
-          `<p class="text-24">文字24px且行高32px</p>`
+          '文字24px且行高28px',
+          `<p class="text-24">文字24px且行高28px</p>`
         ],
         [
-          'text-30',
-          '文字30px且行高38px',
-          `<p class="text-30">文字30px且行高38px</p>`
-        ],
-        [
-          'text-38',
-          '文字38px且行高46px',
-          `<p class="text-38">文字38px且行高46px</p>`
+          'text-28',
+          '文字28px且行高32px',
+          `<p class="text-28">文字28px且行高32px</p>`
         ]
       ],
       bodyData0: [
