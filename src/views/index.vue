@@ -10,7 +10,7 @@
       >{{ item.name }}</li>
     </ul>
     <div  class=" menu--right" style="flex: auto;">
-      <div class="text-38">{{ isName }}</div>
+      <h1>{{ isName }}</h1>
       <router-view></router-view>
     </div>
   </div>

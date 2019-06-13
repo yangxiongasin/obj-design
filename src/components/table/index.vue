@@ -1,8 +1,8 @@
 <template>
   <!-- 顶部内容 -->
-  <table class="font-14">
+  <table class="text-14">
     <thead>
-      <tr class="font-16">
+      <tr class="text-16">
         <th v-for="(item, index) in theadData" :key="'thead' + index">{{ item }}</th>
       </tr>
     </thead>
