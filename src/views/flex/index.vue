@@ -3,6 +3,7 @@
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData"
+      class="mt-20"
     ></obj-table>
   </div>
 </template>
@@ -18,6 +19,16 @@ export default {
           'd-flex',
           ' 一个使用display:flex的容器',
           `<div class="d-flex"><h1></h1><p></p></div>`
+        ],
+        [
+          'flex-wrap',
+          ' 换行',
+          `<div class="flex-wrap" style="width:25px"><h1></h1><p></p></div>`
+        ],
+        [
+          'flex-nowrap',
+          ' 不换行',
+          `<div class="flex-nowrap" style="width:25px"><h1></h1><p></p></div>`
         ],
         [
           'justify-content-center',

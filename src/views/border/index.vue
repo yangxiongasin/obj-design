@@ -1,6 +1,7 @@
 <template>
   <div class="text-16">
-    <div class="mt-24 mb-24">项目中所用边框颜色为E8E8E8；此表格只做样式展示，所用边框颜色为#CCCCCC</div>
+    <h3 class="mt-20 mb-8">边框</h3>
+    <!--<div class="mt-24 mb-24">项目中所用边框颜色为E8E8E8；此表格只做样式展示，所用边框颜色为#CCCCCC</div>-->
     <div
       class="d-flex position"
     >
@@ -24,7 +25,7 @@
 <script>
   export default {
     name: 'position-list',
-    data () {
+    data() {
       return {
         headerData: ['类名', '描述', '示例'],
         bodyData: [

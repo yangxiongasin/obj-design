@@ -3,6 +3,18 @@
   display: flex;
 }
 
+//换行
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//不换行
+.flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 // 行内弹性盒子
 .d-flex-inline {
   display: inline-flex;
@@ -117,6 +129,6 @@
 // 元素水平垂直居中对齐
 .justify-align-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }

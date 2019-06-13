@@ -2,11 +2,11 @@
   <div class="color p-24 w-100">
     <div class="color-bg">
       <div class="color-left">
-        <h1 class="title">背景色</h1>
-        <div class="">
+        <h3 class="title">背景色</h3>
+        <div class="d-flex" style="flex-wrap: wrap">
           <div v-for="item in bgColorGreys"
                :key="item.value"
-               class="bg-box d-flex mb-20 align-items-center">
+               class="bg-box d-flex mb-20 align-items-center w-50">
             <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']">
             </div>
             <div class="mr-20">{{item.className}}</div>
@@ -17,11 +17,11 @@
     </div>
     <div class="color-text">
       <div class="color-left">
-        <h1 class="title">文本颜色</h1>
-        <div class="">
+        <h3 class="title">文本颜色</h3>
+        <div class="d-flex"  style="flex-wrap: wrap">
           <div v-for="item in colorText"
                :key="item.value"
-               class="bg-box d-flex mb-20 align-items-center">
+               class="bg-box d-flex mb-20 align-items-center  w-50">
             <div :class="['bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']"
                  :style="{'backgroundColor': item.value}">
             </div>
@@ -32,8 +32,8 @@
       </div>
     </div>
     <div class="color-shador">
-      <h1 class="title">渐变背景</h1>
-      <div class="d-flex justify-content-around">
+      <h3 class="title">渐变背景</h3>
+      <div class="d-flex justify-content-between">
         <div
           v-for="item in colorShadow"
           :key="item.value"

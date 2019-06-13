@@ -53,43 +53,40 @@
  @include textBasic(12, 20px);
 }
 .text-14 {
- @include textBasic(14, 22px);
+ @include textBasic(14, 20px);
 }
 .text-16 {
- @include textBasic(16, 24px);
+ @include textBasic(16, 22px);
 }
 .text-20 {
- @include textBasic(20, 28px);
+ @include textBasic(20, 24px);
 }
 .text-24 {
- @include textBasic(24, 32px);
+ @include textBasic(24, 28px);
 }
-.text-30 {
- @include textBasic(30, 38px);
-}
-.text-38 {
- @include textBasic(38, 46px);
+.text-28 {
+ @include textBasic(28, 32px);
 }
 // 标题
 .h1,
 h1 {
- @include textBasic(30, 38px);
+ @include textBasic(30, 34px);
 }
 .h2,
 h2 {
- @include textBasic(24, 32px);
+ @include textBasic(24, 28px);
 }
 .h3,
 h3 {
- @include textBasic(20, 28px);
+ @include textBasic(20, 24px);
 }
 .h4,
 h4 {
- @include textBasic(16, 24px);
+ @include textBasic(16, 22px);
 }
 .h5,
 h5 {
- @include textBasic(14, 22px);
+ @include textBasic(14, 20px);
 }
 .h6,
 h6 {
