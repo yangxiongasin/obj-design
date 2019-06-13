@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex flex">
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData"
@@ -130,12 +130,12 @@ export default {
 }
 </script>
 <style>
-h1 {
+.flex h1 {
   width: 20px;
   height: 20px;
   background: red;
 }
-p {
+.flex p {
   width: 10px;
   height: 10px;
   background: green;
