@@ -29,7 +29,7 @@ export default {
           src: 'border'
         },
         {
-          name: 'Color 颜色',
+          name: '背景、阴影颜色',
           src: 'color'
         },
         {
