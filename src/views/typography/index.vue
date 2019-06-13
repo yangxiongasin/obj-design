@@ -94,25 +94,24 @@ export default {
       bodyData2: [
         [
           'text-disabled',
-          '文字表示不可用',
-          `<p class="text-disabled">文字表示不可用</p>`
+          '禁用文本，展位文本',
+          `<p class="text-disabled">禁用文本，展位文本</p>`
         ],
         [
-          'text-danger',
-          '文字表示危险',
-          `<p class="text-danger">文字表示危险</p>`
+          'text-auxiliary',
+          '辅助文本，输入标签',
+          `<p class="text-auxiliary">辅助文本，输入标签</p>`
         ],
+        ['text-explain', '说明文本', `<p class="text-explain">说明文本</p>`],
         [
-          'text-warning',
-          '文字表示警告',
-          `<p class="text-warning">文字表示警告</p>`
+          'text-main',
+          '主要标题，正文文本',
+          `<p class="text-main">主要标题，正文文本</p>`
         ],
-        [
-          'text-success',
-          '文字表示成功',
-          `<p class="text-success">文字表示成功</p>`
-        ],
-        ['text-link', '文字表示链接', `<p class="text-link">文字表示链接</p>`]
+        ['text-danger', '危险文本', `<p class="text-danger">危险文本</p>`],
+        ['text-warning', '警告文本', `<p class="text-warning">警告文本</p>`],
+        ['text-success', '成功文本', `<p class="text-success">成功文本</p>`],
+        ['text-info', '信息文本', `<p class="text-info">信息文本</p>`]
       ],
       bodyData1: [
         [
@@ -152,25 +151,38 @@ export default {
         ]
       ],
       bodyData0: [
-        ['h1', '一级标题', `<p class="h1">一级标题</p>`],
-        ['h2', '二级标题', `<p class="h2">二级标题</p>`],
-        ['h3', '三级标题', `<p class="h3">三级标题</p>`],
-        ['h4', '四级标题', `<p class="h4">四级标题</p>`],
-        ['h5', '五级标题', `<p class="h5">五级标题</p>`],
-        ['h6', '六级标题', `<p class="h6">六级标题</p>`]
+        [
+          'h1',
+          '.h1,h1都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h1">一级标题</p>`
+        ],
+        [
+          'h2',
+          '.h2,h2都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h2">二级标题</p>`
+        ],
+        [
+          'h3',
+          '.h3,h3都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h3">三级标题</p>`
+        ],
+        [
+          'h4',
+          '.h4,h4都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h4">四级标题</p>`
+        ],
+        [
+          'h5',
+          '.h5,h5都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h5">五级标题</p>`
+        ],
+        [
+          'h6',
+          '.h6,h6都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h6">六级标题</p>`
+        ]
       ]
     }
   }
 }
 </script>
-<style>
-table tbody tr:nth-of-type(8),
-table tbody tr:nth-of-type(14),
-table tbody tr:nth-of-type(18),
-table tbody tr:nth-of-type(22),
-table tbody tr:nth-of-type(26) {
-  background: #f7f7f7;
-  color: #5c6b77;
-  font-weight: 900;
-}
-</style>

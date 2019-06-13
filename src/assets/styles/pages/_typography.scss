@@ -56,27 +56,42 @@
   text-align: right;
 }
 
-// 文字表示链接
-.text-link {
-  color: #0C66FF;
+// 信息文本
+.text-info {
+  color: #0065FF;
 }
 
-// 文字表示成功
+// 成功文本
 .text-success {
-  color: #0BB07B;
+  color: #22C993;
 }
 
-// 文字表示警告
+// 警告文本
 .text-warning {
   color: #FFAD0D;
 }
 
-// 文字表示危险
+// 危险文本
 .text-danger {
   color: #F03D3D;
 }
 
-// 文字表示不可用
+//主要标题，正文文本
+.text-main {
+  color: #172B4D;
+}
+
+// 说明文本
+.text-explain {
+  color: #53627C;
+}
+
+//辅助文本，输入标签
+.text-auxiliary {
+  color: #8A94A6;
+}
+
+//禁用文本，展位文本
 .text-disabled {
   color: #A6AEBC;
 }
@@ -124,37 +139,43 @@
 }
 
 // 一级标题
-.h1 {
+.h1,
+h1 {
   font-size: 30px;
   line-height: 38px;
 }
 
 // 二级标题
-.h2 {
+.h2,
+h2 {
   font-size: 24px;
   line-height: 32px;
 }
 
 // 三级标题
-.h3 {
+.h3,
+h3 {
   font-size: 20px;
   line-height: 28px;
 }
 
 // 四级标题
-.h4 {
+.h4,
+h4 {
   font-size: 16px;
   line-height: 24px;
 }
 
 // 五级标题
-.h5 {
+.h5,
+h5 {
   font-size: 14px;
   line-height: 22px;
 }
 
 // 六级标题
-.h6 {
+.h6,
+h6 {
   font-size: 12px;
   line-height: 20px;
 }
