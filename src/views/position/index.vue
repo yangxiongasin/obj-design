@@ -1,6 +1,6 @@
 <template>
   <div
-    class="d-flex"
+    class="d-flex position"
     style="height:500px;"
   >
     <obj-table
@@ -20,20 +20,31 @@ export default {
         [
           'position-fixed',
           '固定定位',
-          `<p class="position-fixed">固定定位</p>`
+          `<p class="position-fixed" style="background:red"></p>`
         ],
         [
           'position-relative',
           '相对定位',
-          `<p class="position-relative">相对定位</p>`
+          `<p class="position-relative" style="background:green"></p>`
         ],
         [
           'position-absolute',
           '绝对定位',
-          `<p class="position-absolute">绝对定位</p>`
+          `<p class="position-absolute" style="background:yellow"></p>`
+        ],
+        [
+          'position-absolute-all',
+          '与父元素保持同等宽高',
+          `<div class="position-relative"><p class="position-absolute-all" style="background:black"></p></div>`
         ]
       ]
     }
   }
 }
 </script>
+<style>
+.position table p {
+  width: 10px;
+  height: 10px;
+}
+</style>

@@ -1,36 +1,31 @@
 <template>
   <div>
-    <h1>标题</h1>
+    <h3>标题</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData0"
     ></obj-table>
-    <h1>字体大小</h1>
+    <h3>字体大小</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData1"
     ></obj-table>
-    <h1>文字类别</h1>
-    <obj-table
-      :thead-data="headerData"
-      :tbody-data="bodyData2"
-    ></obj-table>
-    <h1>文字位置</h1>
+    <h3>文字位置</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData3"
     ></obj-table>
-    <h1>文字字重</h1>
+    <h3>文字字重</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData4"
     ></obj-table>
-    <h1>字母大小写</h1>
+    <h3>字母大小写</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData5"
     ></obj-table>
-    <h1>文字溢出与换行</h1>
+    <h3>文字溢出与换行</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData6"
@@ -48,12 +43,12 @@ export default {
         [
           'text-truncate',
           '文字超出隐藏',
-          `<p class="text-truncate" style="width:180px">你猜我最后一个字写的啥？恩</p>`
+          `<p class="text-truncate" style="width:50px">你猜我最后一个字写的啥？恩</p>`
         ],
         [
           'text-nowrap',
           '文字不换行',
-          `<p class="text-nowrap" style="width:20px">我是不可能弯的我是不可能弯的我是不可能弯的我是不可能弯的我是不可能弯的</p>`
+          `<p class="text-nowrap" style="width:50px;border:solid 1px green;">我是不可能弯的我是不可能弯的</p>`
         ]
       ],
       bodyData5: [
@@ -90,29 +85,6 @@ export default {
         ['text-right', '文字居右', `<p class="text-right">文字居右</p>`],
         ['text-left', '文字居左', `<p class="text-left">文字居左</p>`],
         ['text-center', '文字居中', `<p class="text-center">文字居中</p>`]
-      ],
-      bodyData2: [
-        [
-          'text-disabled',
-          '文字表示不可用',
-          `<p class="text-disabled">文字表示不可用</p>`
-        ],
-        [
-          'text-danger',
-          '文字表示危险',
-          `<p class="text-danger">文字表示危险</p>`
-        ],
-        [
-          'text-warning',
-          '文字表示警告',
-          `<p class="text-warning">文字表示警告</p>`
-        ],
-        [
-          'text-success',
-          '文字表示成功',
-          `<p class="text-success">文字表示成功</p>`
-        ],
-        ['text-link', '文字表示链接', `<p class="text-link">文字表示链接</p>`]
       ],
       bodyData1: [
         [
@@ -152,25 +124,38 @@ export default {
         ]
       ],
       bodyData0: [
-        ['h1', '一级标题', `<p class="h1">一级标题</p>`],
-        ['h2', '二级标题', `<p class="h2">二级标题</p>`],
-        ['h3', '三级标题', `<p class="h3">三级标题</p>`],
-        ['h4', '四级标题', `<p class="h4">四级标题</p>`],
-        ['h5', '五级标题', `<p class="h5">五级标题</p>`],
-        ['h6', '六级标题', `<p class="h6">六级标题</p>`]
+        [
+          'h1',
+          '.h1,h1都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h1">一级标题</p>`
+        ],
+        [
+          'h2',
+          '.h2,h2都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h2">二级标题</p>`
+        ],
+        [
+          'h3',
+          '.h3,h3都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h3">三级标题</p>`
+        ],
+        [
+          'h4',
+          '.h4,h4都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h4">四级标题</p>`
+        ],
+        [
+          'h5',
+          '.h5,h5都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h5">五级标题</p>`
+        ],
+        [
+          'h6',
+          '.h6,h6都是可用的，用于需要匹配标题的样式，但是依然希望文本在行内显示的场合。',
+          `<p class="h6">六级标题</p>`
+        ]
       ]
     }
   }
 }
 </script>
-<style>
-table tbody tr:nth-of-type(8),
-table tbody tr:nth-of-type(14),
-table tbody tr:nth-of-type(18),
-table tbody tr:nth-of-type(22),
-table tbody tr:nth-of-type(26) {
-  background: #f7f7f7;
-  color: #5c6b77;
-  font-weight: 900;
-}
-</style>

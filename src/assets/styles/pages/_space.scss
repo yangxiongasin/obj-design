@@ -1,0 +1,486 @@
+$sideBasic: 4px;
+@mixin slideX($slide: margin, $times: 0, $sideBasic: $sideBasic) {
+	#{$slide}-left: $times * $sideBasic;
+	#{$slide}-right: $times * $sideBasic;
+}
+@mixin slideY($slide: margin, $times: 0, $sideBasic: $sideBasic) {
+	#{$slide}-top: $times * $sideBasic;
+	#{$slide}-bottom: $times * $sideBasic;
+}
+
+// margin
+.m-0{
+	margin: 0;
+}
+.m-4{
+	margin: $sideBasic;
+}
+.m-8{
+	margin: $sideBasic * 2;
+}
+.m-12{
+	margin: $sideBasic * 3;
+}
+.m-16{
+	margin: $sideBasic * 4;
+}
+.m-20{
+	margin: $sideBasic * 5;
+}
+.m-24{
+	margin: $sideBasic * 6;
+}
+.m-28{
+	margin: $sideBasic * 7;
+}
+.m-32{
+	margin: $sideBasic * 8;
+}
+.m-36{
+	margin: $sideBasic * 9;
+}
+.m-40{
+	margin: $sideBasic * 10;
+}
+// margin-top
+.mt-0{
+	margin-top: 0;
+}
+.mt-4{
+	margin-top: $sideBasic;
+}
+.mt-8{
+	margin-top: $sideBasic * 2;
+}
+.mt-12{
+	margin-top: $sideBasic * 3;
+}
+.mt-16{
+	margin-top: $sideBasic * 4;
+}
+.mt-20{
+	margin-top: $sideBasic * 5;
+}
+.mt-24{
+	margin-top: $sideBasic * 6;
+}
+.mt-28{
+	margin-top: $sideBasic * 7;
+}
+.mt-32{
+	margin-top: $sideBasic * 8;
+}
+.mt-36{
+	margin-top: $sideBasic * 9;
+}
+.mt-40{
+	margin-top: $sideBasic * 10;
+}
+// margin-right
+.mr-0{
+	margin-right: 0;
+}
+.mr-4{
+	margin-right: $sideBasic;
+}
+.mr-8{
+	margin-right: $sideBasic * 2;
+}
+.mr-12{
+	margin-right: $sideBasic * 3;
+}
+.mr-16{
+	margin-right: $sideBasic * 4;
+}
+.mr-20{
+	margin-right: $sideBasic * 5;
+}
+.mr-24{
+	margin-right: $sideBasic * 6;
+}
+.mr-28{
+	margin-right: $sideBasic * 7;
+}
+.mr-32{
+	margin-right: $sideBasic * 8;
+}
+.mr-36{
+	margin-right: $sideBasic * 9;
+}
+.mr-40{
+	margin-right: $sideBasic * 10;
+}
+// margin-bottom
+.mb-0{
+	margin-bottom: 0;
+}
+.mb-4{
+	margin-bottom: $sideBasic;
+}
+.mb-8{
+	margin-bottom: $sideBasic * 2;
+}
+.mb-12{
+	margin-bottom: $sideBasic * 3;
+}
+.mb-16{
+	margin-bottom: $sideBasic * 4;
+}
+.mb-20{
+	margin-bottom: $sideBasic * 5;
+}
+.mb-24{
+	margin-bottom: $sideBasic * 6;
+}
+.mb-28{
+	margin-bottom: $sideBasic * 7;
+}
+.mb-32{
+	margin-bottom: $sideBasic * 8;
+}
+.mb-36{
+	margin-bottom: $sideBasic * 9;
+}
+.mb-40{
+	margin-bottom: $sideBasic * 10;
+}
+//margin-left
+.ml-0{
+	margin-left: 0;
+}
+.ml-4{
+	margin-left: $sideBasic;
+}
+.ml-8{
+	margin-left: $sideBasic * 2;
+}
+.ml-12{
+	margin-left: $sideBasic * 3;
+}
+.ml-16{
+	margin-left: $sideBasic * 4;
+}
+.ml-20{
+	margin-left: $sideBasic * 5;
+}
+.ml-24{
+	margin-left: $sideBasic * 6;
+}
+.ml-28{
+	margin-left: $sideBasic * 7;
+}
+.ml-32{
+	margin-left: $sideBasic * 8;
+}
+.ml-36{
+	margin-left: $sideBasic * 9;
+}
+.ml-40{
+	margin-left: $sideBasic * 10;
+}
+// margin-left + margin-right
+.mx-0{
+	@include slideX(margin, 0);
+}
+.mx-4{
+	@include slideX(margin, 1);
+}
+.mx-8{
+	@include slideX(margin, 2);
+}
+.mx-12{
+	@include slideX(margin, 3);
+}
+.mx-16{
+	@include slideX(margin, 4);
+}
+.mx-20{
+	@include slideX(margin, 5);
+}
+.mx-24{
+	@include slideX(margin, 6);
+}
+.mx-28{
+	@include slideX(margin, 7);
+}
+.mx-32{
+	@include slideX(margin, 8);
+}
+.mx-36{
+	@include slideX(margin, 9);
+}
+.mx-40{
+	@include slideX(margin, 10);
+}
+.my-0{
+	@include slideY(margin, 0);
+}
+.my-4{
+	@include slideY(margin, 1);
+}
+.my-8{
+	@include slideY(margin, 2);
+}
+.my-12{
+	@include slideY(margin, 3);
+}
+.my-16{
+	@include slideY(margin, 4);
+}
+.my-20{
+	@include slideY(margin, 5);
+}
+.my-24{
+	@include slideY(margin, 6);
+}
+.my-28{
+	@include slideY(margin, 7);
+}
+.my-32{
+	@include slideY(margin, 8);
+}
+.my-36{
+	@include slideY(margin, 9);
+}
+.my-40{
+	@include slideY(margin, 10);
+}
+
+// padding
+.p-0{
+	padding: 0;
+}
+.p-4{
+	padding: $sideBasic;
+}
+.p-8{
+	padding: $sideBasic * 2;
+}
+.p-12{
+	padding: $sideBasic * 3;
+}
+.p-16{
+	padding: $sideBasic * 4;
+}
+.p-20{
+	padding: $sideBasic * 5;
+}
+.p-24{
+	padding: $sideBasic * 6;
+}
+.p-28{
+	padding: $sideBasic * 7;
+}
+.p-32{
+	padding: $sideBasic * 8;
+}
+.p-36{
+	padding: $sideBasic * 9;
+}
+.p-40{
+	padding: $sideBasic * 10;
+}
+
+// padding-top
+.pt-0{
+	padding-top: 0;
+}
+.pt-4{
+	padding-top: $sideBasic;
+}
+.pt-8{
+	padding-top: $sideBasic * 2;
+}
+.pt-12{
+	padding-top: $sideBasic * 3;
+}
+.pt-16{
+	padding-top: $sideBasic * 4;
+}
+.pt-20{
+	padding-top: $sideBasic * 5;
+}
+.pt-24{
+	padding-top: $sideBasic * 6;
+}
+.pt-28{
+	padding-top: $sideBasic * 7;
+}
+.pt-32{
+	padding-top: $sideBasic * 8;
+}
+.pt-36{
+	padding-top: $sideBasic * 9;
+}
+.pt-40{
+	padding-top: $sideBasic * 10;
+}
+// padding-right
+.pr-0{
+	padding-right: 0;
+}
+.pr-4{
+	padding-right: $sideBasic;
+}
+.pr-8{
+	padding-right: $sideBasic * 2;
+}
+.pr-12{
+	padding-right: $sideBasic * 3;
+}
+.pr-16{
+	padding-right: $sideBasic * 4;
+}
+.pr-20{
+	padding-right: $sideBasic * 5;
+}
+.pr-24{
+	padding-right: $sideBasic * 6;
+}
+.pr-28{
+	padding-right: $sideBasic * 7;
+}
+.pr-32{
+	padding-right: $sideBasic * 8;
+}
+.pr-36{
+	padding-right: $sideBasic * 9;
+}
+.pr-40{
+	padding-right: $sideBasic * 10;
+}
+// padding-bottom
+.pb-0{
+	padding-bottom: 0;
+}
+.pb-4{
+	padding-bottom: $sideBasic;
+}
+.pb-8{
+	padding-bottom: $sideBasic * 2;
+}
+.pb-12{
+	padding-bottom: $sideBasic * 3;
+}
+.pb-16{
+	padding-bottom: $sideBasic * 4;
+}
+.pb-20{
+	padding-bottom: $sideBasic * 5;
+}
+.pb-24{
+	padding-bottom: $sideBasic * 6;
+}
+.pb-28{
+	padding-bottom: $sideBasic * 7;
+}
+.pb-32{
+	padding-bottom: $sideBasic * 8;
+}
+.pb-36{
+	padding-bottom: $sideBasic * 9;
+}
+.pb-40{
+	padding-bottom: $sideBasic * 10;
+}
+//padding-left
+.pl-0{
+	padding-left: 0;
+}
+.pl-4{
+	padding-left: $sideBasic;
+}
+.pl-8{
+	padding-left: $sideBasic * 2;
+}
+.pl-12{
+	padding-left: $sideBasic * 3;
+}
+.pl-16{
+	padding-left: $sideBasic * 4;
+}
+.pl-20{
+	padding-left: $sideBasic * 5;
+}
+.pl-24{
+	padding-left: $sideBasic * 6;
+}
+.pl-28{
+	padding-left: $sideBasic * 7;
+}
+.pl-32{
+	padding-left: $sideBasic * 8;
+}
+.pl-36{
+	padding-left: $sideBasic * 9;
+}
+.pl-40{
+	padding-left: $sideBasic * 10;
+}
+// padding-left + padding-right
+.px-0{
+	@include slideX(padding, 0)
+}
+.px-4{
+	@include slideX(padding, 1)
+}
+.px-8{
+	@include slideX(padding, 2)
+}
+.px-12{
+	@include slideX(padding, 3)
+}
+.px-16{
+	@include slideX(padding, 4)
+}
+.px-20{
+	@include slideX(padding, 5)
+}
+.px-24{
+	@include slideX(padding, 6)
+}
+.px-28{
+	@include slideX(padding, 7)
+}
+.px-32{
+	@include slideX(padding, 8)
+}
+.px-36{
+	@include slideX(padding, 9)
+}
+.px-40{
+	@include slideX(padding, 10)
+}
+.py-0{
+	@include slideY(padding, 0)
+}
+.py-4{
+	@include slideY(padding, 1)
+}
+.py-8{
+	@include slideY(padding, 2)
+}
+.py-12{
+	@include slideY(padding, 3)
+}
+.py-16{
+	@include slideY(padding, 4)
+}
+.py-20{
+	@include slideY(padding, 5)
+}
+.py-24{
+	@include slideY(padding, 6)
+}
+.py-28{
+	@include slideY(padding, 7)
+}
+.py-32{
+	@include slideY(padding, 8)
+}
+.py-36{
+	@include slideY(padding, 9)
+}
+.py-40{
+	@include slideY(padding, 10)
+}

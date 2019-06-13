@@ -12,3 +12,12 @@
 .position-absolute {
   position: absolute;
 }
+
+//与父元素保持同等宽高
+.position-absolute-all {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

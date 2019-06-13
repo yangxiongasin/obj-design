@@ -1,160 +1,97 @@
+@mixin textBasic($fontSize: 12, $lineHeight: normal) {
+ font-size: #{$fontSize}px;
+ line-height: $lineHeight;
+}
 // 文字不换行
 .text-nowrap {
-  white-space: nowrap;
+ white-space: nowrap;
 }
-
 // 文字超出隐藏
 .text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
 }
-
-
 // 所有字母小写
 .text-lowercase {
-  text-transform: lowercase;
+ text-transform: lowercase;
 }
-
 // 所有字母大写
 .text-uppercase {
-  text-transform: uppercase;
+ text-transform: uppercase;
 }
-
 // 首字母大写
 .text-capitalize {
-  text-transform: capitalize;
+ text-transform: capitalize;
 }
-
 // 文字字重
 .text-weight-light {
-  font-weight: lighter;
+ font-weight: lighter;
 }
-
 // 文字字重
 .text-weight-normal {
-  font-weight: normal;
+ font-weight: normal;
 }
-
 // 文字字重
 .text-weight-bold {
-  font-weight: bold;
+ font-weight: bold;
 }
-
 // 文字居中
 .text-center {
-  text-align: center;
+ text-align: center;
 }
-
 // 文字居左
 .text-left {
-  text-align: left;
+ text-align: left;
 }
-
 // 文字居右
 .text-right {
-  text-align: right;
+ text-align: right;
 }
-
-// 文字表示链接
-.text-link {
-  color: #0C66FF;
-}
-
-// 文字表示成功
-.text-success {
-  color: #0BB07B;
-}
-
-// 文字表示警告
-.text-warning {
-  color: #FFAD0D;
-}
-
-// 文字表示危险
-.text-danger {
-  color: #F03D3D;
-}
-
-// 文字表示不可用
-.text-disabled {
-  color: #A6AEBC;
-}
-
 // 字体大小
 .text-12 {
-  font-size: 12px;
-  line-height: 20px;
+ @include textBasic(12, 20px);
 }
-
-// 字体大小
 .text-14 {
-  font-size: 14px;
-  line-height: 22px;
+ @include textBasic(14, 22px);
 }
-
-// 字体大小
 .text-16 {
-  font-size: 16px;
-  line-height: 24px;
+ @include textBasic(16, 24px);
 }
-
-// 字体大小
 .text-20 {
-  font-size: 20px;
-  line-height: 28px;
+ @include textBasic(20, 28px);
 }
-
-// 字体大小
 .text-24 {
-  font-size: 24px;
-  line-height: 32px;
+ @include textBasic(24, 32px);
 }
-
-// 字体大小
 .text-30 {
-  font-size: 30px;
-  line-height: 38px;
+ @include textBasic(30, 38px);
 }
-
-// 字体大小
 .text-38 {
-  font-size: 38px;
-  line-height: 46px;
+ @include textBasic(38, 46px);
 }
-
-// 一级标题
-.h1 {
-  font-size: 30px;
-  line-height: 38px;
+// 标题
+.h1,
+h1 {
+ @include textBasic(30, 38px);
 }
-
-// 二级标题
-.h2 {
-  font-size: 24px;
-  line-height: 32px;
+.h2,
+h2 {
+ @include textBasic(24, 32px);
 }
-
-// 三级标题
-.h3 {
-  font-size: 20px;
-  line-height: 28px;
+.h3,
+h3 {
+ @include textBasic(20, 28px);
 }
-
-// 四级标题
-.h4 {
-  font-size: 16px;
-  line-height: 24px;
+.h4,
+h4 {
+ @include textBasic(16, 24px);
 }
-
-// 五级标题
-.h5 {
-  font-size: 14px;
-  line-height: 22px;
+.h5,
+h5 {
+ @include textBasic(14, 22px);
 }
-
-// 六级标题
-.h6 {
-  font-size: 12px;
-  line-height: 20px;
+.h6,
+h6 {
+ @include textBasic(12, 20px);
 }
