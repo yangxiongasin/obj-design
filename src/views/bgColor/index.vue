@@ -9,7 +9,7 @@
                class="color-box d-flex justify-align-center mr-20">
             <div :class="[item.bgColor, 'd-flex', 'flex-flow-column-nowrap', 'bg-box-color', 'justify-align-center', 'border-radius-100', 'color-box-shador', 'mr-20']">
               <div style="margin-bottom: 10px;">{{item.value}}</div>
-              <div>{{item.color}}</div>
+              <div>{{item.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
                class="bg-box d-flex flex-flow-column-nowrap justify-align-center justify-content-center mr-20">
             <div :class="[item.bgColor, 'd-flex', 'flex-flow-column-nowrap', 'bg-box-color', 'justify-align-center', 'border-radius-100', 'color-box-shador', 'mr-20']">
               <div style="margin-bottom: 10px;">{{item.value}}</div>
-              <div>{{item.color}}</div>
+              <div>{{item.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div v-for="ele in colorTextList_0" :key="ele.value" class="text-container">
             <div :class="['text-item', 'color-white', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
               <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+              <div>{{ele.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
           <div v-for="ele in colorTextList_1" :key="ele.value" class="text-container">
             <div :class="['text-item', 'color-black-default', ele.bgColor, 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
               <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+              <div>{{ele.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
           <div v-for="ele in colorTextList_2" :key="ele.value" class="text-container">
             <div :class="['text-item', 'color-white', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
               <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+              <div>{{ele.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
           <div v-for="ele in colorTextList_3" :key="ele.value" class="text-container">
             <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
               <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+              <div>{{ele.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
           <div v-for="ele in colorTextList_4" :key="ele.value" class="text-container">
             <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
               <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+              <div>{{ele.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@
           <div v-for="ele in colorTextList_5" :key="ele.value" class="text-container">
             <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
               <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+              <div>{{ele.bgColor}}</div>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@
           <div v-for="ele in colorTextList_6" :key="ele.value" class="text-container">
             <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
               <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+              <div>{{ele.bgColor}}</div>
             </div>
           </div>
         </div>
