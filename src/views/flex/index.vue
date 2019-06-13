@@ -48,7 +48,7 @@ export default {
         [
           'flex-ju-al-between',
           '元素水平两端，垂直居中对齐',
-          `<p>display: flex;</p><p>align-items: center;</p><p>justify-content: space-between;</p>`
+          `<p>display: flex;</p><p>align-items: center;</p><p>justify-content:  space-between;</p>`
         ],
         [
           'd-flex-column',
