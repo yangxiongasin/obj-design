@@ -1,5 +1,5 @@
 @mixin textBasic($fontSize: 12, $lineHeight: normal) {
- font-size: $fontSize + 'px';
+ font-size: #{$fontSize}px;
  line-height: $lineHeight;
 }
 // 文字不换行
