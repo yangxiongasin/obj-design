@@ -1,15 +1,15 @@
 <template>
-  <div class="d-flex">
-    <ul class="menu--light font-14">
+  <div class="position-absolute-all ml-40">
+    <ul class="menu--light font-14 position-absolute-y pt-32">
       <li
-        v-for="(item, index) in menuList"
-        :key="'menu' + index"
-        :class="{'menu__item--checked': iscur === index}"
-        @click="$on_toggleLi(item, index)"
-        class="menu__item"
+      v-for="(item, index) in menuList"
+      :key="'menu' + index"
+      :class="{'menu__item--checked': iscur === index}"
+      @click="$on_toggleLi(item, index)"
+      class="menu__item"
       >{{ item.name }}</li>
     </ul>
-    <div  class=" menu--right" style="flex: auto;">
+    <div  class="menu--right position-absolute-all">
       <h1>{{ isName }}</h1>
       <router-view></router-view>
     </div>
