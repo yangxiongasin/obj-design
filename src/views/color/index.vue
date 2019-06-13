@@ -121,7 +121,7 @@ export default {
           className: 'gradient-red-purple',
           text: '(用法：文本输入框和禁用背景)'
         }
-      ],
+      ]
     }
   }
 }
