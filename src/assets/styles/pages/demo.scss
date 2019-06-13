@@ -1,84 +1,81 @@
 // 一个使用display:flex的容器
 .d-flex {
-  display: flex;
+	display: flex;
 }
 
 //换行
 .flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 // 水平反序排列
 .d-flex-row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
+	display: flex;
+	flex-direction: row-reverse;
 }
 
 // 垂直排列
 .d-flex-column {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 // 在元素开始位置水平对齐
 .flex-ju-start {
-  display: flex;
-  justify-content: flex-start;
+	display: flex;
+	justify-content: flex-start;
 }
 
 // 在元素末尾位置水平对齐
 .flex-ju-end {
-  display: flex;
-  justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 // 居中水平对齐
 .flex-ju-center {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 // 两端不留白水平对齐
 .flex-ju-between {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 // 俩边留白水平对齐
 .flex-ju-around {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 // 在元素开始位置垂直对齐
 .flex-al-start {
-  display: flex;
-  align-items: flex-start;
+	align-items: flex-start;
 }
 
 // 在元素末尾位置垂直对齐
 .flex-al-end {
-  display: flex;
-  align-items: flex-end;
+	align-items: flex-end;
 }
 
 // 在元素中间位置垂直对齐
 .flex-al-center {
-  display: flex;
-  align-items: center;
+	align-items: center;
 }
 
 // 元素水平垂直居中对齐
 .flex-ju-al-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 // 元素水平两端，垂直居中对齐
 .flex-ju-al-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }

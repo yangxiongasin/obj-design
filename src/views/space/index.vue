@@ -38,22 +38,22 @@ export default {
       headerData: ['示例', '示例', '示例', '示例', '示例', '示例', '示例'],
       bodyData: [
         [
-          `<div class="bg-gray-1 border-black"><div class="m-8 bg-gray-4">m-8</div></div>`,
-          '<div class="bg-gray-1 border-black"><div class="mx-8 bg-gray-4">mx-8</div></div>',
-          '<div class="bg-gray-1 border-black"><div class="my-8 bg-gray-4">my-8</div></div>',
-          '<div class="bg-gray-1 border-black"><div class="mt-8 bg-gray-4">mt-8</div></div>',
-          '<div class="bg-gray-1 border-black"><div class="mr-8 bg-gray-4">mr-8</div></div>',
-          '<div class="bg-gray-1 border-black"><div class="mb-8 bg-gray-4">mb-8</div></div>',
-          '<div class="bg-gray-1 border-black"><div class="ml-8 bg-gray-4">ml-8</div></div>'
+          `<div class="bg-lighter border-black"><div class="m-8 bg-dark">m-8</div></div>`,
+          '<div class="bg-lighter border-black"><div class="mx-8 bg-dark">mx-8</div></div>',
+          '<div class="bg-lighter border-black"><div class="my-8 bg-dark">my-8</div></div>',
+          '<div class="bg-lighter border-black"><div class="mt-8 bg-dark">mt-8</div></div>',
+          '<div class="bg-lighter border-black"><div class="mr-8 bg-dark">mr-8</div></div>',
+          '<div class="bg-lighter border-black"><div class="mb-8 bg-dark">mb-8</div></div>',
+          '<div class="bg-lighter border-black"><div class="ml-8 bg-dark">ml-8</div></div>'
         ],
         [
-          '<div class="bg-gray-4 border-black p-8"><div class="bg-gray-1">p-8</div></div>',
-          '<div class="bg-gray-4 border-black px-8"><div class="bg-gray-1">px-8</div></div>',
-          '<div class="bg-gray-4 border-black py-8"><div class="bg-gray-1">py-8</div></div>',
-          '<div class="bg-gray-4 border-black pt-8"><div class="bg-gray-1">pt-8</div></div>',
-          '<div class="bg-gray-4 border-black pr-8"><div class="bg-gray-1">pr-8</div></div>',
-          '<div class="bg-gray-4 border-black pb-8"><div class="bg-gray-1">pb-8</div></div>',
-          '<div class="bg-gray-4 border-black pl-8"><div class="bg-gray-1">pl-8</div></div>'
+          '<div class="bg-dark border-black p-8"><div class="bg-lighter">p-8</div></div>',
+          '<div class="bg-dark border-black px-8"><div class="bg-lighter">px-8</div></div>',
+          '<div class="bg-dark border-black py-8"><div class="bg-lighter">py-8</div></div>',
+          '<div class="bg-dark border-black pt-8"><div class="bg-lighter">pt-8</div></div>',
+          '<div class="bg-dark border-black pr-8"><div class="bg-lighter">pr-8</div></div>',
+          '<div class="bg-dark border-black pb-8"><div class="bg-lighter">pb-8</div></div>',
+          '<div class="bg-dark border-black pl-8"><div class="bg-lighter">pl-8</div></div>'
         ]
       ]
     }

@@ -58,23 +58,20 @@
 .text-16 {
  @include textBasic(16, 22px);
 }
+.text-18 {
+ @include textBasic(18, 24px);
+}
 .text-20 {
- @include textBasic(20, 24px);
-}
-.text-24 {
- @include textBasic(24, 28px);
-}
-.text-28 {
- @include textBasic(28, 32px);
+ @include textBasic(20, 26px);
 }
 // 标题
 .h1,
 h1 {
- @include textBasic(30, 34px);
+ @include textBasic(30, 38px);
 }
 .h2,
 h2 {
- @include textBasic(24, 28px);
+ @include textBasic(24, 32px);
 }
 .h3,
 h3 {
