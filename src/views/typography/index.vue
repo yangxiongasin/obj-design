@@ -1,36 +1,31 @@
 <template>
   <div>
-    <h1>标题</h1>
+    <h3>标题</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData0"
     ></obj-table>
-    <h1>字体大小</h1>
+    <h3>字体大小</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData1"
     ></obj-table>
-    <h1>文字类别</h1>
-    <obj-table
-      :thead-data="headerData"
-      :tbody-data="bodyData2"
-    ></obj-table>
-    <h1>文字位置</h1>
+    <h3>文字位置</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData3"
     ></obj-table>
-    <h1>文字字重</h1>
+    <h3>文字字重</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData4"
     ></obj-table>
-    <h1>字母大小写</h1>
+    <h3>字母大小写</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData5"
     ></obj-table>
-    <h1>文字溢出与换行</h1>
+    <h3>文字溢出与换行</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData6"
@@ -90,28 +85,6 @@ export default {
         ['text-right', '文字居右', `<p class="text-right">文字居右</p>`],
         ['text-left', '文字居左', `<p class="text-left">文字居左</p>`],
         ['text-center', '文字居中', `<p class="text-center">文字居中</p>`]
-      ],
-      bodyData2: [
-        [
-          'text-disabled',
-          '禁用文本，展位文本',
-          `<p class="text-disabled">禁用文本，展位文本</p>`
-        ],
-        [
-          'text-auxiliary',
-          '辅助文本，输入标签',
-          `<p class="text-auxiliary">辅助文本，输入标签</p>`
-        ],
-        ['text-explain', '说明文本', `<p class="text-explain">说明文本</p>`],
-        [
-          'text-main',
-          '主要标题，正文文本',
-          `<p class="text-main">主要标题，正文文本</p>`
-        ],
-        ['text-danger', '危险文本', `<p class="text-danger">危险文本</p>`],
-        ['text-warning', '警告文本', `<p class="text-warning">警告文本</p>`],
-        ['text-success', '成功文本', `<p class="text-success">成功文本</p>`],
-        ['text-info', '信息文本', `<p class="text-info">信息文本</p>`]
       ],
       bodyData1: [
         [
