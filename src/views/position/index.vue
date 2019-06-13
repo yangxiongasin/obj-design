@@ -1,6 +1,6 @@
 <template>
   <div
-    class="d-flex"
+    class="d-flex position"
     style="height:500px;"
   >
     <obj-table
@@ -20,45 +20,31 @@ export default {
         [
           'position-fixed',
           '固定定位',
-          `<p class="position-fixed">固定定位</p>`
+          `<p class="position-fixed" style="background:red"></p>`
         ],
         [
           'position-relative',
           '相对定位',
-          `<p class="position-relative">相对定位</p>`
+          `<p class="position-relative" style="background:green"></p>`
         ],
         [
           'position-absolute',
           '绝对定位',
-          `<p class="position-absolute">绝对定位</p>`
+          `<p class="position-absolute" style="background:yellow"></p>`
         ],
         [
-          'position-absolute-trbl',
-          '绝对定位,上下左右都为0',
-          `<div class="position-relative"><p class="position-absolute-trbl">绝对定位,上下左右都为0</p></div>`
-        ],
-        [
-          'position-fixed-top',
-          '悬浮在顶部',
-          `<p class="position-fixed-top" style="padding-top:318px">悬浮在顶部</p>`
-        ],
-        [
-          'position-fixed-bottom',
-          '悬浮在底部',
-          `<p class="position-fixed-bottom" style="padding-bottom:221px">悬浮在底部</p>`
-        ],
-        [
-          'position-fixed-left',
-          '悬浮在左部',
-          `<p class="position-fixed-left" style="padding-left:1050px">悬浮在左部</p>`
-        ],
-        [
-          'position-fixed-right',
-          '悬浮在右部',
-          `<p class="position-fixed-right" style="padding-right:128px">悬浮在右部</p>`
+          'position-absolute-all',
+          '与父元素保持同等宽高',
+          `<div class="position-relative"><p class="position-absolute-all" style="background:black"></p></div>`
         ]
       ]
     }
   }
 }
 </script>
+<style>
+.position table p {
+  width: 10px;
+  height: 10px;
+}
+</style>

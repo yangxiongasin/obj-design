@@ -43,12 +43,12 @@ export default {
         [
           'text-truncate',
           '文字超出隐藏',
-          `<p class="text-truncate" style="width:180px">你猜我最后一个字写的啥？恩</p>`
+          `<p class="text-truncate" style="width:50px">你猜我最后一个字写的啥？恩</p>`
         ],
         [
           'text-nowrap',
           '文字不换行',
-          `<p class="text-nowrap" style="width:20px">我是不可能弯的我是不可能弯的我是不可能弯的我是不可能弯的我是不可能弯的</p>`
+          `<p class="text-nowrap" style="width:50px;border:solid 1px green;">我是不可能弯的我是不可能弯的</p>`
         ]
       ],
       bodyData5: [

@@ -1,122 +1,122 @@
 // 一个使用display:flex的容器
 .d-flex {
-  display: flex;
+ display: flex;
 }
 
 // 行内弹性盒子
 .d-flex-inline {
-  display: inline-flex;
+ display: inline-flex;
 }
 
 // 水平排列
 .d-flex-row {
-  display: flex;
-  flex-direction: row;
+ display: flex;
+ flex-direction: row;
 }
 
 // 水平反序排列
 .d-flex-row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
+ display: flex;
+ flex-direction: row-reverse;
 }
 
 // 垂直排列
 .d-flex-column {
-  display: flex;
-  flex-direction: column;
+ display: flex;
+ flex-direction: column;
 }
 
 // 垂直反序排列
 .d-flex-column-reverse {
-  display: flex;
-  flex-direction: column-reverse;
+ display: flex;
+ flex-direction: column-reverse;
 }
 
 // 在元素开始位置水平对齐
 .justify-content-start {
-  display: flex;
-  justify-content: flex-start;
+ display: flex;
+ justify-content: flex-start;
 }
 
 // 在元素末尾位置水平对齐
 .justify-content-end {
-  display: flex;
-  justify-content: flex-end;
+ display: flex;
+ justify-content: flex-end;
 }
 
 // 居中水平对齐
 .justify-content-center {
-  display: flex;
-  justify-content: center;
+ display: flex;
+ justify-content: center;
 }
 
 // 两端不留白水平对齐
 .justify-content-between {
-  display: flex;
-  justify-content: space-between;
+ display: flex;
+ justify-content: space-between;
 }
 
 // 俩边留白水平对齐
 .justify-content-around {
-  display: flex;
-  justify-content: space-around;
+ display: flex;
+ justify-content: space-around;
 }
 
 // 在元素开始位置垂直对齐
 .align-items-start {
-  align-items: flex-start;
+ align-items: flex-start;
 }
 
 // 在元素末尾位置垂直对齐
 .align-items-end {
-  align-items: flex-end;
+ align-items: flex-end;
 }
 
 // 在元素中间位置垂直对齐
 .align-items-center {
-  align-items: center;
+ align-items: center;
 }
 
 // 在元素基线位置垂直对齐(元素中的文本都以第一个元素的文本的基线对齐)
 .align-items-baseline {
-  display: flex;
-  align-items: baseline;
+ display: flex;
+ align-items: baseline;
 }
 
 // 默认值-元素被拉伸以适应容器
 .align-items-stretch {
-  display: flex;
-  align-items: stretch;
+ display: flex;
+ align-items: stretch;
 }
 
 // 弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。
 .align-self-start {
-  align-self: flex-start;
+ align-self: flex-start;
 }
 
 // 弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。
 .align-self-end {
-  align-self: flex-end;
+ align-self: flex-end;
 }
 
 // 弹性盒子元素在该行的侧轴（纵轴）上居中放置。
 .align-self-center {
-  align-self: center;
+ align-self: center;
 }
 
 // 弹性盒子元素文本按照第一个元素的文本的基线对齐。
 .align-self-baseline {
-  align-self: baseline;
+ align-self: baseline;
 }
 
 // 默认值-子元素被拉伸以适应容器
 .align-self-stretch {
-  align-self: stretch;
+ align-self: stretch;
 }
 
 // 元素水平垂直居中对齐
 .justify-align-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }

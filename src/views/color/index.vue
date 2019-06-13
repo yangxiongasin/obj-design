@@ -1,91 +1,44 @@
 <template>
-  <div class="p-24 w-100">
+  <div class="color p-24 w-100">
     <div class="color-bg">
       <div class="color-left">
-        <h1 class="title">基础色调</h1>
-        <div class="d-flex justify-content-between w-100 justify-content-center">
-          <div v-for="item in bgColorList"
-               :key="item.value"
-               class="color-box d-flex justify-align-center mr-20">
-            <div :class="[item.bgColor, 'd-flex', 'flex-flow-column-nowrap', 'bg-box-color', 'justify-align-center', 'border-radius-100', 'color-box-shador', 'mr-20']">
-              <div style="margin-bottom: 10px;">{{item.value}}</div>
-              <div>{{item.color}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="color-left">
         <h1 class="title">背景色</h1>
-        <div class="d-flex">
+        <div class="">
           <div v-for="item in bgColorGreys"
                :key="item.value"
-               class="bg-box d-flex flex-flow-column-nowrap justify-align-center justify-content-center mr-20">
-            <div :class="[item.bgColor, 'd-flex', 'flex-flow-column-nowrap', 'bg-box-color', 'justify-align-center', 'border-radius-100', 'color-box-shador', 'mr-20']">
-              <div style="margin-bottom: 10px;">{{item.value}}</div>
-              <div>{{item.color}}</div>
+               class="bg-box d-flex mb-20 align-items-center">
+            <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']">
             </div>
+            <div class="mr-20">{{item.className}}</div>
+            <div>{{item.text}}</div>
           </div>
         </div>
       </div>
     </div>
     <div class="color-text">
-      <h1 class="title">全局颜色</h1>
-      <div class="w-100 text-border">
-        <div class="mb-20 ql-color-white">
-          <div v-for="ele in colorTextList_0" :key="ele.value" class="text-container">
-            <div :class="['text-item', 'color-white', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
-              <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
+      <div class="color-left">
+        <h1 class="title">文本颜色</h1>
+        <div class="">
+          <div v-for="item in colorText"
+               :key="item.value"
+               class="bg-box d-flex mb-20 align-items-center">
+            <div :class="['bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']"
+                 :style="{'backgroundColor': item.value}">
             </div>
+            <div class="mr-20">{{item.className}}</div>
+            <div>{{item.text}}</div>
           </div>
         </div>
-        <div class="mb-20">
-          <div v-for="ele in colorTextList_1" :key="ele.value" class="text-container">
-            <div :class="['text-item', 'color-black-default', ele.bgColor, 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
-              <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-20">
-          <div v-for="ele in colorTextList_2" :key="ele.value" class="text-container">
-            <div :class="['text-item', 'color-white', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
-              <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-20">
-          <div v-for="ele in colorTextList_3" :key="ele.value" class="text-container">
-            <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
-              <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-20">
-          <div v-for="ele in colorTextList_4" :key="ele.value" class="text-container">
-            <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
-              <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-20">
-          <div v-for="ele in colorTextList_5" :key="ele.value" class="text-container">
-            <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
-              <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
-            </div>
-          </div>
-        </div>
-        <div class="mb-20">
-          <div v-for="ele in colorTextList_6" :key="ele.value" class="text-container">
-            <div :class="['text-item', 'color-black-default', ele.bgColor, 'w-100', 'justify-align-center', 'flex-flow-column-nowrap', 'color-box-shador']">
-              <div>{{ele.value}}</div>
-              <div>{{ele.color}}</div>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="color-shador">
+      <h1 class="title">渐变背景</h1>
+      <div class="d-flex justify-content-around">
+        <div
+          v-for="item in colorShador"
+          :key="item.value"
+          :class="[item.className, 'item']">
+          {{item.className}}
         </div>
       </div>
     </div>
@@ -97,50 +50,76 @@ export default {
   name: '',
   data () {
     return {
-      bgColorList: [
-        {
-          color: 'color-black-default',
-          bgColor: 'bg-black-default',
-          value: '#212434'
-        }, {
-          color: 'color-primary',
-          bgColor: 'bg-primary',
-          value: '#0C66FF'
-        }, {
-          color: 'color-success',
-          bgColor: 'bg-success',
-          value: '#0BB07B'
-        }, {
-          color: 'color-error',
-          bgColor: 'bg-error',
-          value: '#F03D3D'
-        }, {
-          color: 'color-alert',
-          bgColor: 'bg-alert',
-          value: '#FFAD0D'
-        }, {
-          color: 'color-white',
-          bgColor: 'bg-white',
-          value: '#FFFFFF'
-        }
-      ],
       bgColorGreys: [
         {
-          color: 'color-gray-1',
-          bgColor: 'bg-gray-1',
-          value: '#F8F9FB'
+          className: 'bg-gray-1',
+          value: '#F8F9FB',
+          text: '(用法：纯色背景)'
         }, {
-          color: 'color-gray-2',
-          bgColor: 'bg-gray-2',
-          value: '#828282'
+          className: 'bg-gray-2',
+          value: '#828282',
+          text: '(用法：列表悬停色和纯色背景)'
         }, {
-          color: 'color-gray-3',
-          bgColor: 'bg-gray-3',
-          value: '#E8E8E8'
+          className: 'bg-gray-3',
+          value: '#E8E8E8',
+          text: '(用法：线、分割符和禁用图标)'
         }, {
-          color: 'color-gray-4',
-          bgColor: 'bg-gray-4',
-          value: '#E1E4E8'
+          className: 'bg-gray-4',
+          value: '#E1E4E8',
+          text: '(用法：文本输入框和禁用背景)'
+        }
+      ],
+      colorText: [
+        {
+          className: 'color-primary',
+          value: '#0C66FF',
+          text: '(用法：信息文本)'
+        }, {
+          className: 'color-success',
+          value: '#0BB07B',
+          text: '(用法：成功文本)'
+        }, {
+          className: 'color-error',
+          value: '#F03D3D',
+          text: '(用法：错误文本)'
+        }, {
+          className: 'color-alert',
+          value: '#FFAD0D',
+          text: '(用法：主要标题、正文文本)'
+        }, {
+          className: 'color-dark',
+          value: '#0A1F44',
+          text: '(用法：主要标题、正文文本)'
+        }, {
+          className: 'color-medium',
+          value: '#53627C',
+          text: '(用法：正文、说明文本)'
+        }, {
+          className: 'color-light',
+          value: '#8A94A6',
+          text: '(用法：辅助文本、输入标签)'
+        }, {
+          className: 'color-input',
+          value: '#A6AEBC',
+          text: '(用法：禁用文本。输入标签)'
+        }
+      ],
+      colorShador: [
+        {
+          className: 'gradient-blue',
+          text: '(用法：纯色背景)'
+        }, {
+          className: 'gradient-green',
+          text: '(用法：列表悬停色和纯色背景)'
+        }, {
+          className: 'gradient-red-orange',
+          text: '(用法：线、分割符和禁用图标)'
+        }, {
+          className: 'gradient-blue-purple',
+          text: '(用法：文本输入框和禁用背景)'
+        }, {
+          className: 'gradient-red-purple',
+          text: '(用法：文本输入框和禁用背景)'
         }
       ],
       colorTextList_0: [
