@@ -5,6 +5,11 @@
     :thead-data="headerData"
     :tbody-data="bodyData1"
     ></obj-table>
+    <h3 class="mt-20 mb-8">字体颜色</h3>
+    <obj-table
+      :thead-data="headerData"
+      :tbody-data="bodyColorData"
+    ></obj-table>
     <h3 class="mt-20 mb-8">文字溢出与换行</h3>
     <obj-table
     :thead-data="headerData"
@@ -39,6 +44,48 @@ export default {
   data () {
     return {
       headerData: ['类名', '描述', '示例'],
+      bodyColorData: [
+        [
+          'color-primary',
+          '(用法：信息文本)',
+          `<p class="color-primary">文字颜色</p>`
+        ],
+        [
+          'color-success',
+          '(用法：成功文本)',
+          `<p class="color-success">文字颜色</p>`
+        ],
+        [
+          'color-error',
+          '(用法：错误文本)',
+          `<p class="color-error">文字颜色</p>`
+        ],
+        [
+          'color-alert',
+          '(用法：主要标题、正文文本)',
+          `<p class="color-alert">文字颜色</p>`
+        ],
+        [
+          'color-dark',
+          '(用法：主要标题、正文文本)',
+          `<p class="color-dark">文字颜色</p>`
+        ],
+        [
+          'color-medium',
+          '(用法：正文、说明文本)',
+          `<p class="color-medium">文字颜色</p>`
+        ],
+        [
+          'color-light',
+          '(用法：辅助文本、输入标签)',
+          `<p class="color-light">文字颜色</p>`
+        ],
+        [
+          'color-input',
+          '(用法：禁用文本。输入标签)',
+          `<p class="color-input">文字颜色</p>`
+        ]
+      ],
       bodyData6: [
         [
           'text-truncate',

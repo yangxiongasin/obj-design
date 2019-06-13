@@ -128,7 +128,4 @@
   table tr td {
     width: 200px;
   }
-  table tr td {
-    border-color: #000;
-  }
 </style>
