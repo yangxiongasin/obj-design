@@ -1,10 +1,9 @@
 <template>
-  <div class="d-flex">
-    <obj-table
-      :thead-data="headerData"
-      :tbody-data="bodyData"
-    ></obj-table>
-  </div>
+  <obj-table
+  :thead-data="headerData"
+  :tbody-data="bodyData"
+  class="mt-20"
+  ></obj-table>
 </template>
 
 <script>

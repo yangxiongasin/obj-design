@@ -3,10 +3,10 @@
     <div class="color-bg">
       <div class="color-left">
         <h1 class="title">背景色</h1>
-        <div class="">
+        <div class="d-flex" style="flex-wrap: wrap">
           <div v-for="item in bgColorGreys"
                :key="item.value"
-               class="bg-box d-flex mb-20 align-items-center">
+               class="bg-box d-flex mb-20 align-items-center w-50">
             <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']">
             </div>
             <div class="mr-20">{{item.className}}</div>
@@ -18,10 +18,10 @@
     <div class="color-text">
       <div class="color-left">
         <h1 class="title">文本颜色</h1>
-        <div class="">
+        <div class="d-flex"  style="flex-wrap: wrap">
           <div v-for="item in colorText"
                :key="item.value"
-               class="bg-box d-flex mb-20 align-items-center">
+               class="bg-box d-flex mb-20 align-items-center  w-50">
             <div :class="['bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']"
                  :style="{'backgroundColor': item.value}">
             </div>

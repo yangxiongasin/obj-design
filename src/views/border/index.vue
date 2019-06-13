@@ -5,10 +5,10 @@
 </template>
 
 <script>
-  export default {
-    name: 'border',
-    data () {
-      return {}
-    }
+export default {
+  name: 'border',
+  data () {
+    return {}
   }
+}
 </script>

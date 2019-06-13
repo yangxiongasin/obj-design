@@ -1,5 +1,5 @@
 <template>
-  <obj-table :thead-data="headerData" :tbody-data="bodyData"></obj-table>
+  <obj-table :thead-data="headerData" :tbody-data="bodyData" class="mt-20"></obj-table>
 </template>
 <script>
 export default {

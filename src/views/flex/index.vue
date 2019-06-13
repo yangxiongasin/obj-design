@@ -3,6 +3,7 @@
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData"
+      class="mt-20"
     ></obj-table>
   </div>
 </template>

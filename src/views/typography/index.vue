@@ -1,34 +1,34 @@
 <template>
   <div>
-    <h3>标题</h3>
+    <h3 class="mt-20 mb-8">字体大小</h3>
+    <obj-table
+    :thead-data="headerData"
+    :tbody-data="bodyData1"
+    ></obj-table>
+    <h3 class="mt-20 mb-8">文字溢出与换行</h3>
+    <obj-table
+    :thead-data="headerData"
+    :tbody-data="bodyData6"
+    ></obj-table>
+    <h3 class="mt-20 mb-8">文字字重</h3>
+    <obj-table
+    :thead-data="headerData"
+    :tbody-data="bodyData4"
+    ></obj-table>
+    <h3 class="mt-20 mb-8">标题</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData0"
     ></obj-table>
-    <h3>字体大小</h3>
-    <obj-table
-      :thead-data="headerData"
-      :tbody-data="bodyData1"
-    ></obj-table>
-    <h3>文字位置</h3>
+    <h3 class="mt-20 mb-8">文字位置</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData3"
     ></obj-table>
-    <h3>文字字重</h3>
-    <obj-table
-      :thead-data="headerData"
-      :tbody-data="bodyData4"
-    ></obj-table>
-    <h3>字母大小写</h3>
+    <h3 class="mt-20 mb-8">字母大小写</h3>
     <obj-table
       :thead-data="headerData"
       :tbody-data="bodyData5"
-    ></obj-table>
-    <h3>文字溢出与换行</h3>
-    <obj-table
-      :thead-data="headerData"
-      :tbody-data="bodyData6"
     ></obj-table>
   </div>
 </template>
