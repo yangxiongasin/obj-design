@@ -1,7 +1,9 @@
 // ✨✨✨
 import objTable from './table/index.js'
+import objPopover from './popover/index.js'
 let components = {
-  objTable
+  objTable,
+  objPopover
 }
 
 const install = function (Vue) {
