@@ -15,22 +15,6 @@
         </div>
       </div>
     </div>
-    <!--<div class="color-text">-->
-      <!--<div class="color-left">-->
-        <!--<h3 class="title">文本颜色</h3>-->
-        <!--<div class="d-flex"  style="flex-wrap: wrap">-->
-          <!--<div v-for="item in colorText"-->
-               <!--:key="item.value"-->
-               <!--class="bg-box d-flex mb-20 align-items-center  w-50">-->
-            <!--<div :class="['bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']"-->
-                 <!--:style="{'backgroundColor': item.value}">-->
-            <!--</div>-->
-            <!--<div class="mr-20">{{item.className}}</div>-->
-            <!--<div>{{item.text}}</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
     <div class="color-shador">
       <h3 class="title">渐变背景</h3>
       <div class="d-flex justify-content-between">
@@ -121,7 +105,7 @@ export default {
           className: 'gradient-red-purple',
           text: '(用法：文本输入框和禁用背景)'
         }
-      ],
+      ]
     }
   }
 }
