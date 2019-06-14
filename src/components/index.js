@@ -1,9 +1,11 @@
 // ✨✨✨
 import objTable from './table/index.js'
 import objPopover from './popover/index.js'
+import objLeftTree from './objLeftTree/index.js'
 let components = {
   objTable,
-  objPopover
+  objPopover,
+  objLeftTree
 }
 
 const install = function (Vue) {
