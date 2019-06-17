@@ -59,6 +59,10 @@ export default {
         {
           name: 'Typography 文字',
           src: 'typography'
+        },
+        {
+          name: 'popover 弹出框',
+          src: 'popover'
         }
       ]
     }

@@ -52,6 +52,11 @@ export default [
         name: 'typography',
         path: '/typography',
         component: require('../views/typography')
+      },
+      {
+        name: 'popover',
+        path: '/popover',
+        component: require('../views/popover')
       }
     ]
   },
