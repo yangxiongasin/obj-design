@@ -63,6 +63,10 @@ export default {
         {
           name: '树组件',
           src: 'leftTree'
+        },
+        {
+          name: 'popover 弹出框',
+          src: 'popover'
         }
       ]
     }

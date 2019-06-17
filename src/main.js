@@ -1,6 +1,8 @@
 // @author Yangxiong
 import './assets/styles/index.scss'
 import Vue from 'vue'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 import router from './router'
 
@@ -12,6 +14,7 @@ import vfilter from './conf/filters'
 
 Vue.config.productionTip = false
 Vue.use(components)
+Vue.use(ElementUI)
 Vue.prototype.$service = serviceAPI
 Vue.prototype.$publicFunc = pbulicFunc
 

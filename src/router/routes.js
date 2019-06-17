@@ -57,6 +57,11 @@ export default [
         name: 'leftTree',
         path: '/leftTree',
         component: require('../views/leftTree')
+      },
+      {
+        name: 'popover',
+        path: '/popover',
+        component: require('../views/popover')
       }
     ]
   },
