@@ -8,13 +8,13 @@ const appConf = 'http://10.221.56.94/mock/49/'
  */
 const conf = {
   commonConfig: {
-    baseURL: appConf,
+    baseURL: appConf
   },
   root: {}
 }
 
 // 将优先的静态配置覆盖本配置
-function overrideConf() {
+function overrideConf () {
   let urls = (appConf || appConf.baseURL)
   let root = conf.root
   if (urls) {

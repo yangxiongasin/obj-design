@@ -3,9 +3,11 @@ import './assets/styles/index.scss'
 import Vue from 'vue'
 
 import router from './router'
+import http from './utils/http'
 
 import App from './App.vue'
 import components from './components'
+
 import serviceAPI from './conf/services.js'
 import pbulicFunc from './conf/publicFunc.js'
 import vfilter from './conf/filters'
@@ -16,6 +18,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 Vue.use(components)
 Vue.use(elementUI)
+Vue.use(http)
 Vue.prototype.$service = serviceAPI
 Vue.prototype.$publicFunc = pbulicFunc
 
