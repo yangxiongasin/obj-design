@@ -76,7 +76,7 @@ export default {
     }
   },
   mounted () {
-    this.$router.replace({name: 'border'})
+    this.$router.replace({name: 'leftTree'})
   },
   methods: {
     $on_toggleLi (data, index) {

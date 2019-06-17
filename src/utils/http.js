@@ -12,14 +12,9 @@
 
 import Vue from 'vue'
 import axios from 'axios'
-import { TMessage, TGlobalLoading } from 'aid-taurus-desktop-cmcc'
-import config from '../conf/axios.config.js'
-import {
-	authHttp
-} from 'seok-portal'
-import authorization from '../authorization'
-import store from '../store/store'
-
+import config from '../conf/axios.config'
+/* eslint no-useless-escape: "off" */
+/* eslint no-prototype-builtins: "off" */
 
 /**
  * 深度合并多个对象，返回合并后的新对象
@@ -27,10 +22,10 @@ import store from '../store/store'
  * @param  {...Object} objs 多个对象
  * @return {Object}    返回合并后的新对象，原对象内容不变
  */
-function merge(...objs) {
+function merge (...objs) {
   let result = {}
 
-  function assignValue(val, key) {
+  function assignValue (val, key) {
     if (typeof result[key] === 'object' && typeof val === 'object') {
       result[key] = merge(result[key], val)
     } else {
@@ -52,7 +47,7 @@ function merge(...objs) {
  * @param  {Object}  obj 待检测对象
  * @return {Boolean}  如果参数`obj`是`null`或空对象`{}`，那么返回`true`，否则返回`false`
  */
-function isOwnEmpty(obj) {
+function isOwnEmpty (obj) {
   for (let name in obj) {
     if (obj.hasOwnProperty(name)) {
       return false // 返回false，不为空对象
@@ -70,7 +65,7 @@ const http = getInstances(config)
  * @return {Object} 返回一个根据`assets/axios.config.js`配置文件生
  *                  成的服务调用对象集合
  */
-function getInstances(conf) {
+function getInstances (conf) {
   let result = {}
   let domains = conf.root || null
   let commonConfig = conf.commonConfig ? conf.commonConfig : {}
@@ -84,14 +79,15 @@ function getInstances(conf) {
   if (!isOwnEmpty(domains)) {
     for (let key in domains) {
       key = key.trim()
-      if (key !== '' && key !== 'http') { // 忽略以"http"为属性名的节点
+      if (key !== '' && key !== 'http') {
+        // 忽略以"http"为属性名的节点
         let instance = axios.create(domains[key])
         let domainName = `\$${key}`
         // 为每一个实例添加上axios的静态方法
-        instance.all = (promises) => {
+        instance.all = promises => {
           return axios.all(promises)
         }
-        instance.spread = (cb) => {
+        instance.spread = cb => {
           return axios.spread(cb)
         }
         instance.Cancel = () => {
@@ -112,7 +108,7 @@ function getInstances(conf) {
 
 // 定义插件
 const HttpPlugin = {
-  install: (Vue) => {
+  install: Vue => {
     if (http === null) {
       Vue.prototype.$http = axios
     } else {
@@ -129,25 +125,18 @@ const HttpPlugin = {
  * @returns {Object|Promise} 返回配置对象本身或者返回一个Promise对象，
  *                           参见{@link https://github.com/axios/axios Axios}官网
  */
-function requestInterceptor(config) {
+function requestInterceptor (config) {
   // 将post方法的content-type 设置为 application/x-www-form-urlencoded
   if (config.method === 'post') {
-    // config.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-    // let data = config.data
-    // let param = new URLSearchParams()
-    // for (let key in data) {
-    //   param.append(key, data[key])
-    // }
-    // config.data = param
-	  let data = config.data
-	  for (let key in data) {
-	  	if (data[key] == null)
-	  		data[key] = ''
-	  }
+    config.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+    let data = config.data
+    let param = new URLSearchParams()
+    for (let key in data) {
+      param.append(key, data[key])
+    }
+    config.data = param
   }
-  TGlobalLoading.start()
-	let authConfig = authHttp.requestInterceptor(config, authorization, store.state.authStore)
-	return merge(config, authConfig)
+  return config
 }
 
 /**
@@ -155,9 +144,7 @@ function requestInterceptor(config) {
  * @param error
  * @returns {Promise} 返回一个Promise对象
  */
-function requestError(error) {
-  TMessage.danger(error) // 提示错误
-  TGlobalLoading.error()
+function requestError (error) {
   return Promise.reject(error)
 }
 
@@ -166,17 +153,21 @@ function requestError(error) {
  * @param {Object} response `Axios`响应对象
  * @returns {Object|Promise} 返回`Axios`响应对象或Promise对象
  */
-function responseInterceptor(response) {
-  TGlobalLoading.finish()
+function responseInterceptor (response) {
   response = checkStatus(response)
   response = checkCode(response)
   return response
 }
 
-const checkStatus = (response) => {
+const checkStatus = response => {
   // loading
   // 如果http状态码正常，则直接返回数据
-  if (response && (response.status === 200 || response.status === 304 || response.status === 400)) {
+  if (
+    response &&
+    (response.status === 200 ||
+      response.status === 304 ||
+      response.status === 400)
+  ) {
     return response
     // 如果不需要除了data之外的数据，可以直接 return response.data
   }
@@ -186,33 +177,23 @@ const checkStatus = (response) => {
   }
 }
 
-const checkCode = (response) => {
+const checkCode = response => {
   // 如果code异常(这里已经包括网络错误，服务器错误，后端抛出的错误)，可以弹出一个错误提示，告诉用户
   if (response.status === -404) {
     showError(response.msg)
   }
-  if (response.data.resultCode) { // 业务接口错误
-    if (response.data.resultCode !== '000000') { // 接口错误
-      showError(response.data.resultMessage)
-      return
+  if (response.data.code) {
+    // 业务接口错误
+    if (response.data.code !== 200) {
+      // 接口错误
+      showError(response.data.message)
     }
   }
-	if (response.data.systemException) { // 业务接口异常
-		if (response.data.systemException.stackTrace) {
-			showError(null) // 不show 异常信息（显示接口调用错误），java 异常信息太多
-      return
-		}
-	}
   return response
 }
 
 const showError = (errorMsg, alwaysDisplay) => {
   errorMsg = errorMsg || '服务调用出错'
-  if (alwaysDisplay === true) {
-    TMessage.danger(errorMsg, 0)
-  } else {
-    TMessage.danger(errorMsg)
-  }
 }
 
 /**
@@ -231,24 +212,8 @@ const showError = (errorMsg, alwaysDisplay) => {
  *   }
  * }
  */
-function responseError(error) {
-  TGlobalLoading.error()
-	authHttp.responseErrorInterceptor(error, authorization, http.$http, store.state.authStore, (accessToken, refreshToken, authState, code) => {
-		store.commit('setAuthState', {
-			accessToken, refreshToken, authState, code
-		})
-	})
-
-	if (error && error.response) {
-		switch (error.response.status) {
-			case 403:
-				TMessage.danger("账号没有权限访问系统")
-				break
-			default:
-				break
-		}
-	}
-	return Promise.reject(error)
+function responseError (error) {
+  return Promise.reject(error)
 }
 
 // 默认服务调用拦截器设置
