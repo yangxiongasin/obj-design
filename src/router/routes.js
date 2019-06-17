@@ -52,6 +52,11 @@ export default [
         name: 'typography',
         path: '/typography',
         component: require('../views/typography')
+      },
+      {
+        name: 'leftTree',
+        path: '/leftTree',
+        component: require('../views/leftTree')
       }
     ]
   },
