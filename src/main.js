@@ -10,8 +10,11 @@ import serviceAPI from './conf/services.js'
 import pbulicFunc from './conf/publicFunc.js'
 import vfilter from './conf/filters'
 
+import elementUI from 'element-ui'
+
 Vue.config.productionTip = false
 Vue.use(components)
+Vue.use(elementUI)
 Vue.prototype.$service = serviceAPI
 Vue.prototype.$publicFunc = pbulicFunc
 

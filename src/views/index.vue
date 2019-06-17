@@ -59,6 +59,10 @@ export default {
         {
           name: 'Typography 文字',
           src: 'typography'
+        },
+        {
+          name: 'leftTree',
+          src: 'leftTree'
         }
       ]
     }
