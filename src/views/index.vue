@@ -59,14 +59,6 @@ export default {
         {
           name: 'Typography 文字',
           src: 'typography'
-        },
-        {
-          name: '树组件',
-          src: 'leftTree'
-        },
-        {
-          name: 'popover 弹出框',
-          src: 'popover'
         }
       ]
     }
