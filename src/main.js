@@ -6,9 +6,19 @@ import router from './router'
 
 import App from './App.vue'
 import components from './components'
+import serviceAPI from './conf/services.js'
+import pbulicFunc from './conf/publicFunc.js'
+import vfilter from './conf/filters'
 
 Vue.config.productionTip = false
 Vue.use(components)
+Vue.prototype.$service = serviceAPI
+Vue.prototype.$publicFunc = pbulicFunc
+
+for (let key in vfilter) {
+  Vue.filter(key, vfilter[key])
+}
+
 // 创建应用根组件
 const app = new Vue({
   router,
