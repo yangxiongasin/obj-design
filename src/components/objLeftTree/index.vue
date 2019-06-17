@@ -1,39 +1,26 @@
 <template>
   <div class="">
-    <el-tree :props="props" :load="loadNode" lazy show-checkbox> </el-tree>
+    <!-- 懒加载、手风琴、多选框 -->
+    <el-tree node-key="id"
+      :render-content="$com_renderContent"
+      lazy accordion show-checkbox
+      @check-change="$com_checkChange">
+    </el-tree>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      props: {
-        label: 'name',
-        children: 'zones',
-        isLeaf: 'leaf'
-      }
     }
   },
   methods: {
-    loadNode (node, resolve) {
-      if (node.level === 0) {
-        return resolve([{ name: 'region' }])
-      }
-      if (node.level > 1) return resolve([])
-
-      setTimeout(() => {
-        const data = [
-          {
-            name: 'leaf',
-            leaf: true
-          },
-          {
-            name: 'zone'
-          }
-        ]
-
-        resolve(data)
-      }, 500)
+    // 传递给 data 属性的数组中该节点所对应的对象、节点本身是否被选中、节点的子树中是否有被选中的节点
+    $com_checkChange (data, checked, indeterminate) {
+      console.log(data, checked, indeterminate)
+    },
+    $com_renderContent () {
+      return 1
     }
   }
 }
