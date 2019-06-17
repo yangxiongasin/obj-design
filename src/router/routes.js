@@ -62,6 +62,11 @@ export default [
         name: 'popover',
         path: '/popover',
         component: require('../views/popover')
+      },
+      {
+        name: 'selectTrans',
+        path: '/selectTrans',
+        component: require('../views/selectTrans')
       }
     ]
   },

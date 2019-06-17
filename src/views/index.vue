@@ -67,6 +67,10 @@ export default {
         {
           name: 'popover 弹出框',
           src: 'popover'
+        },
+        {
+          name: 'selectTrans 映射表',
+          src: 'selectTrans'
         }
       ]
     }
