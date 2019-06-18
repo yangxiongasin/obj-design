@@ -46,44 +46,49 @@ export default {
       headerData: ['类名', '描述', '示例'],
       bodyColorData: [
         [
-          'color-primary',
+          'color-0c66ff',
           '#0c66ff (用法：信息文本)',
-          `<p class="color-primary">文字颜色</p>`
+          `<p class="color-0c66ff">文字颜色</p>`
         ],
         [
-          'color-success',
+          'color-0bb07b',
           '#0bb07b (用法：成功文本)',
-          `<p class="color-success">文字颜色</p>`
+          `<p class="color-0bb07b">文字颜色</p>`
         ],
         [
-          'color-error',
+          'color-f03d3d',
           '#f03d3d (用法：错误文本)',
-          `<p class="color-error">文字颜色</p>`
+          `<p class="color-f03d3d">文字颜色</p>`
         ],
         [
-          'color-alert',
+          'color-ffad0d',
           '#ffad0d (用法：主要标题、正文文本)',
-          `<p class="color-alert">文字颜色</p>`
+          `<p class="color-ffad0d">文字颜色</p>`
         ],
         [
-          'color-dark',
+          'color-0a1f44',
           '#0A1F44 (用法：主要标题、正文文本)',
-          `<p class="color-dark">文字颜色</p>`
+          `<p class="color-0a1f44">文字颜色</p>`
         ],
         [
-          'color-medium',
+          'color-53627c',
           '#53627C (用法：正文、说明文本)',
-          `<p class="color-medium">文字颜色</p>`
+          `<p class="color-53627c">文字颜色</p>`
         ],
         [
-          'color-light',
+          'color-8a94a6',
           '#8A94A6 (用法：辅助文本、输入标签)',
-          `<p class="color-light">文字颜色</p>`
+          `<p class="color-8a94a6">文字颜色</p>`
         ],
         [
-          'color-lighter',
+          'color-a6aebc',
           '#A6AEBC (用法：禁用文本。输入标签)',
-          `<p class="color-lighter">文字颜色</p>`
+          `<p class="color-a6aebc">文字颜色</p>`
+        ],
+        [
+          'color-ffffff',
+          '#FFFFFF (用法：白色字体)',
+          `<p class="color-ffffff bg-0c66ff">文字颜色</p>`
         ]
       ],
       bodyData6: [

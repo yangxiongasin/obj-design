@@ -1,0 +1,58 @@
+.selectTrans{
+  // .searchInput{
+  //   width:60%;
+  // }
+  .searchBlock{
+    overflow:hidden;
+    overflow-x:auto;
+    -webkit-scrollbar{display:none;}
+    white-space:nowrap;
+  }
+  .listBlock{
+    height:430px;
+    vertical-align: top;
+    // width:250px;
+    display:inline-block;
+    border-right: 1px solid #E8E8E8;
+    box-sizing: border-box;
+    .searchList{
+      padding:0 7px;
+      margin-top:25px;
+      .el-input__inner{
+        font-size:12px;
+      }
+      .el-autocomplete-suggestion li{
+        font-size:12px !important;
+      }
+    }
+    .searchItemList{
+      div{
+        height:34px;
+        line-height:32px;
+        font-size:12px;
+        padding:0 16px;
+        box-sizing: border-box;
+      }
+      div:hover{
+        background-color:#EBF5FF;
+        border-left:4px solid #0B69FF;
+        padding-left:12px;
+      }
+      .activeSelect{
+        background-color:#EBF5FF;
+        border-left:4px solid #0B69FF;
+        padding-left:12px;
+      }
+      span{
+        line-height:34px;
+      }
+    }
+    .el-input__inner{
+      background-color:rgb(245, 245, 245);
+    }
+  }
+  .breadcrumb{
+    line-height:32px;
+    background-color:#EBF5FF;
+  }
+}

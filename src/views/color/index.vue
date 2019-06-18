@@ -9,7 +9,7 @@
                class="bg-box flex-al-center mb-20 w-50">
             <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20', 'border-outline']">
             </div>
-            <div class="mr-20">{{item.className}}</div>
+            <div class="mr-20">{{item.className}} {{ item.value }}</div>
             <div>{{item.text}}</div>
           </div>
         </div>
@@ -36,25 +36,37 @@ export default {
     return {
       bgColorGreys: [
         {
-          className: 'bg-lighter',
+          className: 'bg-f8f9fb',
           value: '#F8F9FB',
           text: '(用法：纯色背景)'
         }, {
-          className: 'bg-light',
+          className: 'bg-828282',
           value: '#828282',
           text: '(用法：列表悬停色和纯色背景)'
         }, {
-          className: 'bg-medium',
+          className: 'bg-e8e8e8',
           value: '#E8E8E8',
           text: '(用法：线、分割符和禁用图标)'
         }, {
-          className: 'bg-dark',
+          className: 'bg-e1e4e8',
           value: '#E1E4E8',
           text: '(用法：文本输入框和禁用背景)'
         }, {
-          className: 'bg-white',
+          className: 'bg-ffffff',
           value: '#FFFFFF',
           text: '(用法：重置背景色)'
+        }, {
+          className: 'bg-f03d3d',
+          value: '#F03D3D',
+          text: '(用法：按钮背景色)'
+        }, {
+          className: 'bg-0c66ff',
+          value: '#0C66FF',
+          text: '(用法：按钮背景色)'
+        }, {
+          className: 'bg-ffad0d',
+          value: '#FFAD0D',
+          text: '(用法：按钮背景色)'
         }
       ],
       colorText: [
