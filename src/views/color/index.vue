@@ -7,7 +7,7 @@
           <div v-for="item in bgColorGreys"
                :key="item.value"
                class="bg-box flex-al-center mb-20 w-50">
-            <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20']">
+            <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20', 'border-outline']">
             </div>
             <div class="mr-20">{{item.className}}</div>
             <div>{{item.text}}</div>
@@ -51,6 +51,10 @@ export default {
           className: 'bg-dark',
           value: '#E1E4E8',
           text: '(用法：文本输入框和禁用背景)'
+        }, {
+          className: 'bg-white',
+          value: '#FFFFFF',
+          text: '(用法：重置背景色)'
         }
       ],
       colorText: [

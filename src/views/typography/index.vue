@@ -47,43 +47,43 @@ export default {
       bodyColorData: [
         [
           'color-primary',
-          '(用法：信息文本)',
+          '#0c66ff (用法：信息文本)',
           `<p class="color-primary">文字颜色</p>`
         ],
         [
           'color-success',
-          '(用法：成功文本)',
+          '#0bb07b (用法：成功文本)',
           `<p class="color-success">文字颜色</p>`
         ],
         [
           'color-error',
-          '(用法：错误文本)',
+          '#f03d3d (用法：错误文本)',
           `<p class="color-error">文字颜色</p>`
         ],
         [
           'color-alert',
-          '(用法：主要标题、正文文本)',
+          '#ffad0d (用法：主要标题、正文文本)',
           `<p class="color-alert">文字颜色</p>`
         ],
         [
           'color-dark',
-          '(用法：主要标题、正文文本)',
+          '#0A1F44 (用法：主要标题、正文文本)',
           `<p class="color-dark">文字颜色</p>`
         ],
         [
           'color-medium',
-          '(用法：正文、说明文本)',
+          '#53627C (用法：正文、说明文本)',
           `<p class="color-medium">文字颜色</p>`
         ],
         [
           'color-light',
-          '(用法：辅助文本、输入标签)',
+          '#8A94A6 (用法：辅助文本、输入标签)',
           `<p class="color-light">文字颜色</p>`
         ],
         [
-          'color-input',
-          '(用法：禁用文本。输入标签)',
-          `<p class="color-input">文字颜色</p>`
+          'color-lighter',
+          '#A6AEBC (用法：禁用文本。输入标签)',
+          `<p class="color-lighter">文字颜色</p>`
         ]
       ],
       bodyData6: [

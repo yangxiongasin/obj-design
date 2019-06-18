@@ -2,14 +2,14 @@
   <div class="position-absolute-all ml-40">
     <ul class="menu--light text-14 position-absolute-y pt-32 border-outline">
       <li
-      v-for="(item, index) in menuList"
-      :key="'menu' + index"
-      :class="{'menu__item--checked': iscur === index}"
-      @click="$on_toggleLi(item, index)"
-      class="menu__item border-bottom cursor-pointer"
+        v-for="(item, index) in menuList"
+        :key="'menu' + index"
+        :class="{'menu__item--checked': iscur === index}"
+        @click="$on_toggleLi(item, index)"
+        class="menu__item border-bottom cursor-pointer"
       >{{ item.name }}</li>
     </ul>
-    <div  class="menu--right position-absolute-all">
+    <div class="menu--right position-absolute-all">
       <h1>{{ isName }}</h1>
       <router-view></router-view>
     </div>
@@ -71,18 +71,22 @@ export default {
         {
           name: 'selectTrans 映射表',
           src: 'selectTrans'
+        },
+        {
+          name: 'upload 上传',
+          src: 'upload'
         }
       ]
     }
   },
   mounted () {
-    this.$router.replace({name: 'leftTree'})
+    this.$router.replace({ name: 'leftTree' })
   },
   methods: {
     $on_toggleLi (data, index) {
       this.iscur = index
       this.isName = data.name
-      this.$router.replace({name: data.src})
+      this.$router.replace({ name: data.src })
     }
   }
 }

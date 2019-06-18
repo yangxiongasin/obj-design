@@ -73,6 +73,9 @@
 .bg-dark {
   background: #E1E4E8;
 }
+.bg-white {
+  background: #FFFFFF;
+}
 .shadow {
   box-shadow: 0 0 2px 0 rgba(10,31,68,0.08), 0 9px 12px 0 rgba(10,31,68,0.10);
 }
@@ -794,13 +797,13 @@ $sideBasic: 4px;
   color: #0A1F44;
 }
 .color-medium {
-  color: #0A1F44;
-}
-.color-light {
   color: #53627C;
 }
-.color-input {
-  color: #E1E4E8;
+.color-light {
+  color: #8A94A6;
+}
+.color-lighter {
+  color: #A6AEBC;
 }
 
 // 文字不换行
