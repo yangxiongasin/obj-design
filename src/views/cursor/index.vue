@@ -25,6 +25,9 @@ export default {
         ],
         [
           'cursor-help', '鼠标指针为帮助', `<code class="cursor-help">Help手型</code>`
+        ],
+        [
+          'cursor-not-allowed', '鼠标指针为禁用', `<code class="cursor-not-allowed">禁用手型</code>`
         ]
       ]
     }
