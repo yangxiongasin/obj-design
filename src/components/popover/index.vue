@@ -45,7 +45,7 @@ export default{
     ocjContent: String,
     width: {
       type: [String, Number],
-      default: 250
+      default: 249
     },
     ocjTitle: String,
     placement: {
@@ -142,11 +142,11 @@ export default{
   methods: {
     $on_cancel () {
       this.obj_visible = false
-      this.$emit('cancel', this.obj_visible)
+      this.$emit('cancel')
     },
     $on_ok () {
       this.obj_visible = false
-      this.$emit('ok', this.obj_visible)
+      this.$emit('ok')
     },
     $com_show () {
       this.$emit('show')

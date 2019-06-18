@@ -9,7 +9,7 @@
                class="bg-box flex-al-center mb-20 w-50">
             <div :class="[item.className, 'bg-box-color', 'border-radius-100', 'color-box-shador', 'mr-20', 'border-outline']">
             </div>
-            <div class="mr-20">{{item.className}}</div>
+            <div class="mr-20">{{item.className}} {{ item.value }}</div>
             <div>{{item.text}}</div>
           </div>
         </div>
