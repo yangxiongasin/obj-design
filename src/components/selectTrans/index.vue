@@ -14,7 +14,7 @@
             @focus="changeItemContent(allOptions[index].data)"
           ></el-autocomplete>
           <div class="mt-20 searchItemList">
-            <div v-for="item in allOptions[index].data" :key="item.index" @click="clickThis(item,index)">{{item.name}}
+            <div v-for="(item,itemIndex) in allOptions[index].data" :key="item.index" @click="clickThis(item,index,itemIndex);" :class="activeSelect==itemIndex&&activeBlock==index?'activeSelect':''">{{item.name}}
               <span class="float-right iconfont icon-erp-chevron-right" v-if="item.leaf==0"></span>
             </div>
           </div>
@@ -23,10 +23,10 @@
       <div class="breadcrumb p-8 pl-16 mt-12">
         <el-breadcrumb separator-class="el-icon-arrow-right" class="d-inline-block">
           <span class="float-left">已选类目：</span>
-          <el-breadcrumb-item>首页</el-breadcrumb-item>
-          <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="item in breadcrumbList" :key="item">{{item}}</el-breadcrumb-item>
+          <!-- <el-breadcrumb-item>活动管理</el-breadcrumb-item>
           <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-          <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+          <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
         </el-breadcrumb>
       </div>
   </div>
@@ -39,12 +39,19 @@ export default {
   data () {
     return {
       queryStringEnter: '',
+      activeBlock: null,
+      activeSelect: null,
       allOptions: [],
-      suggesList: []
+      suggesList: [],
+      breadcrumbList: []
     }
   },
   methods: {
-    clickThis (item, index) {
+    clickThis (item, index, itemIndex) {
+      this.activeBlock = index
+      this.activeSelect = itemIndex
+      this.breadcrumbList.splice(index)
+      this.breadcrumbList.push(item.name)
       console.log(item, 'itemthis')
       console.log(index, '当前点击的数组下标')
       let thisIndex = index + 1
