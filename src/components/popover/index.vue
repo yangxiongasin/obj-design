@@ -1,30 +1,35 @@
 <template>
   <el-popover
     :placement="placement"
-    :title="title"
     :width="computedWidth"
     :trigger="trigger"
     :disabled="disabled"
     :transition="transition"
-    :visible-arrow="transition"
+    :visible-arrow="visibleArrow"
     :popper-options="popperOptions"
-    :popper-class="popperClass"
+    popper-class="popover"
     :open-delay="openDelay"
     :tabindex="tabindex"
-    v-model="visible"
-    @show="show"
-    @after-enter="afterEnter"
-    @hide="hide"
-    @after-leave="afterLeave">
-    <slot name="obj_content">{{ content }}</slot>
-    <slot name="obj_footer">
-      <div class="footer" v-if="showFooter">
-        <el-button v-if="showCancelBtn" size="mini" type="text" @click="cancelHandle">取消</el-button>
-        <el-button type="primary" size="mini" class="typeClass" @click="okHandle">确定</el-button>
+    v-model="obj_visible"
+    @show="$com_show"
+    @after-enter="$com_afterEnter"
+    @hide="$com_hide"
+    @after-leave="$com_afterLeave">
+    <div v-if="ocjTitle" class="flex-al-center text-16 text-weight-bold color-dark mb-8">
+      <i :class="iconClass"></i>
+      <span>{{ ocjTitle }}</span>
+    </div>
+    <slot name="ocj_content">
+      <div class="text-14 color-light">
+        {{ ocjContent }}
       </div>
     </slot>
+    <div class="popover-footer text-right mt-16" v-if="showFooter">
+      <el-button v-if="showCancelBtn" class="border-outline bg-white" size="mini" @click="$on_cancel">取消</el-button>
+      <el-button type="primary" size="mini" :class="typeClass" @click="$on_ok">确定</el-button>
+    </div>
     <span class="d-inline-block" slot="reference">
-      <slot name="obj_reference"></slot>
+      <slot name="ocj_reference"></slot>
     </span>
   </el-popover>
 </template>
@@ -35,11 +40,14 @@ export default{
     trigger: {
       type: String,
       default: 'click',
-      validator: value => ['click', 'focus', 'hover', 'manual'].indexOf(value) > -1
+      validator: value => ['click', 'focus', 'hover'].indexOf(value) > -1
     },
-    content: String,
-    width: [String, Number],
-    title: String,
+    ocjContent: String,
+    width: {
+      type: [String, Number],
+      default: 250
+    },
+    ocjTitle: String,
     placement: {
       type: String,
       default: 'bottom'
@@ -48,7 +56,6 @@ export default{
       type: Boolean,
       default: false
     },
-    value: Boolean,
     offset: {
       type: Number,
       default: 0
@@ -88,17 +95,16 @@ export default{
     type: {
       type: String,
       default: 'primary',
-      validator: value => ['primary', 'focus', 'hover', 'manual'].indexOf(value) > -1
+      validator: value => ['primary', 'success', 'error', 'warning'].indexOf(value) > -1
+    },
+    showIcon: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
     return {
-      visible: this.value
-    }
-  },
-  watch: {
-    value (val) {
-      this.visible = val
+      obj_visible: false
     }
   },
   computed: {
@@ -107,6 +113,19 @@ export default{
         return this.width
       } else {
         return 150
+      }
+    },
+    iconClass () {
+      if (this.showIcon) {
+        if (this.type === 'primary') {
+          return ['icon-erp-info', 'color-primary', 'popover-icon', 'mr-8']
+        } else if (this.type === 'error') {
+          return ['icon-erp-help-circle', 'color-error', 'popover-icon', 'mr-8']
+        } else if (this.type === 'warning') {
+          return ['icon-erp-help-circle', 'color-alert', 'popover-icon', 'mr-8']
+        } else if (this.type === 'success') {
+          return ['icon-erp-help-circle', 'color-alert', 'popover-icon', 'mr-8']
+        }
       }
     },
     typeClass () {
@@ -121,22 +140,24 @@ export default{
   mounted () {
   },
   methods: {
-    cancelHandle () {
-      this.$emit('cancel', this.visible)
+    $on_cancel () {
+      this.obj_visible = false
+      this.$emit('cancel', this.obj_visible)
     },
-    okHandle () {
-      this.$emit('ok', this.visible)
+    $on_ok () {
+      this.obj_visible = false
+      this.$emit('ok', this.obj_visible)
     },
-    show () {
+    $com_show () {
       this.$emit('show')
     },
-    afterEnter () {
+    $com_afterEnter () {
       this.$emit('after-enter')
     },
-    hide () {
-      this.$emit('ok')
+    $com_hide () {
+      this.$emit('hide')
     },
-    afterLeave () {
+    $com_afterLeave () {
       this.$emit('after-leave')
     }
   }
