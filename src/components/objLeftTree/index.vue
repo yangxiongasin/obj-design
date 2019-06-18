@@ -136,7 +136,7 @@ export default {
     $com_clickTree (data, node, store) {
       this.$emit('getCurrentId', data.id)
     },
-    $pub_resetTree () {
+    reset () {
       this.$emit('getCurrentId', '')
       this.grandNode.childNodes = []
       this.$com_loadNode(this.grandNode, this.func)
