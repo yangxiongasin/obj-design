@@ -1,16 +1,24 @@
 <template>
   <!-- 懒加载、手风琴、多选框 -->
-  <el-tree v-if="showTree"
-  ref="leftTree" :props="treeProps" :load="$com_loadNode"
-  node-key="id" :expand-on-click-node="false"
-  lazy accordion :show-checkbox="showCheckbox"
-  :render-content="$com_renderContent"
-  @node-click="$com_clickTree"
-  @check-change="$com_checkChange">
+  <el-tree
+    ref="leftTree"
+    :props="treeProps"
+    :load="$com_loadNode"
+    empty-text=""
+    node-key="id"
+    :expand-on-click-node="false"
+    lazy
+    accordion
+    :show-checkbox="showCheckbox"
+    :render-content="$com_renderContent"
+    @node-click="$com_clickTree"
+    @check-change="$com_checkChange"
+  >
   </el-tree>
 </template>
 <script>
 export default {
+  name: 'leftTree',
   props: {
     http_treedata: {
       type: Function
@@ -26,15 +34,10 @@ export default {
     uniformColor: {
       type: Boolean,
       default: false
-    },
-    value: {
-      type: Boolean,
-      default: false
     }
   },
   data () {
     return {
-      showTree: this.value,
       treeProps: {
         label: 'name', // 指定节点标签为节点对象的某个属性值
         children: 'childs', // 指定子树为节点对象的某个属性值
@@ -43,38 +46,32 @@ export default {
           return false
         } // 是否为叶子节点
       },
-      parentId: ''
-    }
-  },
-  watch: {
-    value (val) {
-      this.showTree = val
-    }
-  },
-  computed: {
-    params () {
-      return {
-        parentId: this.parentId
-      }
+      grandNode: '',
+      func: null
     }
   },
   methods: {
     // 判断当前节点是否包含子节点
     $com_loadNode (node, resolve) {
       const that = this
+      that.func = resolve
       if (node.isLeaf) return
-      if (node.data) this.parentId = node.data.id
+      if (node.data) {
+        this.$emit('getCurrentId', node.data.id)
+      } else {
+        this.grandNode = node
+      }
       if (typeof this.http_treedata === 'function') {
-        that.http_treedata.call(this, resolve, that.params)
+        that.http_treedata.call(this, resolve)
       }
     },
     // 传递给 data 属性的数组中该节点所对应的对象、节点本身是否被选中、节点的子树中是否有被选中的节点
-    $com_checkChange (data, checked, indeterminate) {
+    $com_checkChange () {
       const datas = this.$refs.leftTree.getCheckedNodes()
       this.$emit('checkData', datas)
     },
     // render自定义样式渲染
-    $com_renderContent (h, { node, data, store }) {
+    $com_renderContent (h, { node, data }) {
       const that = this
       let icontooltip = ''
       // 如果是叶子类目并且是禁用状态
@@ -100,13 +97,14 @@ export default {
               'icon-erp-alert-triangle': node.isLeaf && data.status === '0',
               'icon-erp-eye-off': node.isLeaf && data.online === '0',
               'text-18': true,
-              'cursor-not-allowed': node.isLeaf && data.status === '0',
+              'cursor-not-allowed':
+                node.isLeaf && data.status === '0' && !that.uniformColor,
               'mr-4': true
             }
           })
         ]
       )
-      if (!that.showIcon) { icon = '' }
+      if (!that.showIcon) icon = ''
       return h(
         'div',
         {
@@ -122,9 +120,11 @@ export default {
               class: {
                 'color-light': !node.isLeaf || that.uniformColor,
                 'color-medium': node.isLeaf && !that.uniformColor,
-                'color-input': node.isLeaf && data.status === '0' && !that.uniformColor,
+                'color-input':
+                  node.isLeaf && data.status === '0' && !that.uniformColor,
                 'text-14': true,
-                'cursor-not-allowed': node.isLeaf && data.status === '0'
+                'cursor-not-allowed':
+                  node.isLeaf && data.status === '0' && !that.uniformColor
               }
             },
             node.label
@@ -135,6 +135,11 @@ export default {
     // 传递给 data 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。
     $com_clickTree (data, node, store) {
       this.$emit('getCurrentId', data.id)
+    },
+    $pub_resetTree () {
+      this.$emit('getCurrentId', '')
+      this.grandNode.childNodes = []
+      this.$com_loadNode(this.grandNode, this.func)
     }
   }
 }
