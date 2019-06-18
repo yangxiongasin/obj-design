@@ -2,7 +2,17 @@
   <div class="selectTrans">
       <div class="mt-12 border-outline searchBlock">
         <div class="listBlock" v-for="(blockMount,index) in allOptions" :key="blockMount.index">
-          <el-input class="searchList" placeholder="名称/拼音首字母" suffix-icon="el-icon-search"></el-input>
+          <!-- <el-input class="searchList" placeholder="名称/拼音首字母" suffix-icon="el-icon-search"></el-input> -->
+          <el-autocomplete
+            v-model="queryStringEnter"
+            class="inline-input searchList"
+            :fetch-suggestions="querySearch"
+            placeholder="名称/拼音首字母"
+            @select="handleSelect"
+            value-key="name"
+            suffix-icon="el-icon-search"
+            @focus="changeItemContent(allOptions[index].data)"
+          ></el-autocomplete>
           <div class="mt-20 searchItemList">
             <div v-for="item in allOptions[index].data" :key="item.index" @click="clickThis(item,index)">{{item.name}}
               <span class="float-right iconfont icon-erp-chevron-right" v-if="item.leaf==0"></span>
@@ -28,7 +38,9 @@ export default {
   },
   data () {
     return {
-      allOptions: []
+      queryStringEnter: '',
+      allOptions: [],
+      suggesList: []
     }
   },
   methods: {
@@ -46,6 +58,27 @@ export default {
           that.allOptions.push(res.data)
         })
       }
+    },
+    // 搜索建议
+    changeItemContent (data) {
+      console.log('被调用', data)
+      this.suggesList = data
+    },
+    querySearch (queryString, cb) {
+      var suggesList = this.suggesList
+      console.log(suggesList, 'suggesList')
+      var results = queryString ? suggesList.filter(this.createFilter(queryString)) : suggesList
+      // 调用 callback 返回建议列表的数据
+      cb(results)
+    },
+    createFilter (queryString) {
+      return (suggesList) => {
+        console.log(suggesList, 'suggesList333')
+        return (suggesList.name.toLowerCase().indexOf(queryString.toLowerCase()) === 0)
+      }
+    },
+    handleSelect (item) {
+      console.log(item, '搜索建议中的handleSelect')
     }
   },
   mounted () {
