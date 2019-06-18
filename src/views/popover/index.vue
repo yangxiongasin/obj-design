@@ -1,7 +1,11 @@
 <template>
   <div class="popover">
     <h3 class="mt-20 mb-8">popover 类型</h3>
+    <h4 class="mt-16 mb-16">注意：触发 popover 插入 slot 时，需修改 slot 名：原 elementUI 的 popover 组件值 reference 改为 ocj_reference </h4>
     <div class="d-flex flex-ju-bet">
+      <div class="mr-20 code">
+        <pre class="color-primary text-16">{{ typeCode }}</pre>
+      </div>
       <obj-popover
         ocj-title="属性启用"
         ocj-content="是否确认启用属性？"
@@ -11,21 +15,21 @@
         <el-button slot="ocj_reference">click 激活</el-button>
       </obj-popover>
     </div>
-    <h4 class="mt-16 mb-16">注意：触发 popover 插入 slot 时，需修改 slot 名：原 elementUI 的 popover 组件值 reference 改为 ocj_reference </h4>
-    <!--<div class="text-weight-bold text-16 mb-8"></div>-->
-    <pre class="color-primary text-16">{{ typeCode }}</pre>
     <h3 class="mt-20 mb-8">自行插入slot内容</h3>
-    <obj-popover
-      type="error">
-      <div slot="ocj_content">自行插入slot的内容</div>
-      <el-button slot="ocj_reference">click 激活</el-button>
-    </obj-popover>
     <h4 class="mt-16 mb-16">注意：内容区域插入 slot 时，需带上 slot 名：ocj_content</h4>
-    <!--<div class="text-weight-bold text-16 mb-8"></div>-->
-    <pre class="color-primary text-16">{{ slotCode }}</pre>
+    <div class="d-flex flex-ju-bet">
+      <div class="mr-20 code">
+        <pre class="color-primary text-16">{{ slotCode }}</pre>
+      </div>
+      <obj-popover
+        type="error">
+        <div slot="ocj_content">自行插入slot的内容</div>
+        <el-button slot="ocj_reference">click 激活</el-button>
+      </obj-popover>
+    </div>
+
     <h3 class="mt-20 mb-8">新增属性</h3>
     <h4 class="mt-16 mb-16">说明：如下所列中修改原 elementUI 中 popover 组件 trigger、title、content、width 四个参数；新增 show-footer、show-cancel-btn、type、show-icon 等四个参数</h4>
-    <!--<div class="text-16 mb-8 text-weight-bold"></div>-->
     <div class="d-flex border">
       <obj-table
         :thead-data="headerData"
@@ -125,14 +129,14 @@ export default{
         ]
       ],
       typeCode: `
-      <obj-popover
-        ocj-title="属性启用"
-        ocj-content="是否确认启用属性？"
-        type="primary"
-        @ok="$com_ok"
-        @cancel="$com_cancel">
-        <el-button slot="ocj_reference">click 激活</el-button>
-      </obj-popover>`,
+    <obj-popover
+      ocj-title="属性启用"
+      ocj-content="是否确认启用属性？"
+      type="primary"
+      @ok="$com_ok"
+      @cancel="$com_cancel">
+      <el-button slot="ocj_reference">click 激活</el-button>
+    </obj-popover>`,
       slotCode: `
     <obj-popover
       type="error">
