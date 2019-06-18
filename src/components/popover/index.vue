@@ -15,12 +15,12 @@
     @after-enter="$com_afterEnter"
     @hide="$com_hide"
     @after-leave="$com_afterLeave">
-    <div v-if="ocjTitle" class="flex-al-center text-16 text-weight-bold color-dark mb-8">
+    <div v-if="ocjTitle" class="flex-al-center text-16 text-weight-bold color-0a1f44 mb-8">
       <i :class="iconClass"></i>
       <span>{{ ocjTitle }}</span>
     </div>
     <slot name="ocj_content">
-      <div class="text-14 color-light">
+      <div class="text-14 color-8a94a6">
         {{ ocjContent }}
       </div>
     </slot>
@@ -118,13 +118,13 @@ export default{
     iconClass () {
       if (this.showIcon) {
         if (this.type === 'primary') {
-          return ['icon-erp-info', 'color-primary', 'popover-icon', 'mr-8']
+          return ['icon-erp-info', 'color-0c66ff', 'popover-icon', 'mr-8']
         } else if (this.type === 'error') {
-          return ['icon-erp-help-circle', 'color-error', 'popover-icon', 'mr-8']
+          return ['icon-erp-help-circle', 'color-0bb07b', 'popover-icon', 'mr-8']
         } else if (this.type === 'warning') {
-          return ['icon-erp-help-circle', 'color-alert', 'popover-icon', 'mr-8']
+          return ['icon-erp-help-circle', 'color-f03d3d', 'popover-icon', 'mr-8']
         } else if (this.type === 'success') {
-          return ['icon-erp-help-circle', 'color-alert', 'popover-icon', 'mr-8']
+          return ['icon-erp-help-circle', 'color-ffad0d', 'popover-icon', 'mr-8']
         }
       }
     },
