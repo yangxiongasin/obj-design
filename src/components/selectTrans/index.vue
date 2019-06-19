@@ -22,7 +22,7 @@
       <div class="breadcrumb p-8 pl-16 mt-12">
         <el-breadcrumb separator-class="el-icon-arrow-right" class="d-inline-block">
           <span class="float-left">已选类目：</span>
-          <el-breadcrumb-item v-for="item in breadcrumbList" :key="item.index">{{item.name}}</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="item in breadcrumbName" :key="item.index">{{item}}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
   </div>
@@ -30,7 +30,8 @@
 <script>
 export default {
   props: {
-    url: String
+    url: String,
+    selectType: String
   },
   data () {
     return {
@@ -40,6 +41,7 @@ export default {
       suggesList: [],
       breadcrumbList: [],
       breadcrumbCSS: [],
+      breadcrumbName: [],
       selectedItem: []
     }
   },
@@ -47,6 +49,9 @@ export default {
     clickThis (item, index) {
       this.breadcrumbList.splice(index)
       this.breadcrumbList.push(item)
+      this.breadcrumbName.splice(index)
+      this.breadcrumbName.push(item.name)
+      this.$emit('breadcrumbName', this.breadcrumbName)
       this.selectedItem = []
       this.selectedItem.push(item)
       this.$emit('selectedItem', this.selectedItem)
@@ -90,6 +95,7 @@ export default {
     }).then(res => {
       this.allOptions.push(res.data)
     })
+    console.log(this.selectType, 'selectType')
   }
 }
 </script>
