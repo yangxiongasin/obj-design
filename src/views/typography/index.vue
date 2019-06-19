@@ -51,6 +51,11 @@ export default {
           `<p class="color-0c66ff">文字颜色</p>`
         ],
         [
+          'color-0b69ff',
+          '#0b69ff (用法：链接文本)',
+          `<p class="color-0b69ff">文字颜色</p>`
+        ],
+        [
           'color-0bb07b',
           '#0bb07b (用法：成功文本)',
           `<p class="color-0bb07b">文字颜色</p>`
