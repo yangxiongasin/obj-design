@@ -33,84 +33,84 @@ export default {
         [
           'border-0',
           '无边框',
-          `<p class="border-0 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-0 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-left',
           '只含左边框',
-          `<p class=" border-left bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-left bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-top',
           '只含上边框',
-          `<p class=" border-top bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-top bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-right',
           '只含右边框',
-          `<p class=" border-right bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-right bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-bottom',
           '只含下边框',
-          `<p class=" border-bottom bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-bottom bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-left-0',
           '缺左边框',
-          `<p class=" border-left-0 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-left-0 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-top-0',
           '缺上边框',
-          `<p class=" border-top-0 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-top-0 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-right-0',
           '缺右边框',
-          `<p class=" border-right-0 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-right-0 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-bottom-0',
           '缺下边框',
-          `<p class=" border-bottom-0 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class=" border-bottom-0 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ]
       ],
       radiusData: [
         [
           'border-radius-2',
           '通用类圆角，尺寸为2px',
-          `<p class="border-radius-2 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-radius-2 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-radius-4',
           '通用类圆角，尺寸为4px',
-          `<p class="border-radius-4 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-radius-4 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-radius-50',
           '通用类圆角，尺寸为50%',
-          `<p class="border-radius-50 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-radius-50 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-radius-top-4',
           '只含上边框圆角，尺寸为4px',
-          `<p class="border-radius-top-4 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-radius-top-4 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-radius-left-4',
           '只含左边框圆角，尺寸为4px',
-          `<p class="border-radius-left-4 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-radius-left-4 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-radius-right-4',
           '只含右边框圆角，尺寸为4px',
-          `<p class="border-radius-right-4 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-radius-right-4 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ],
         [
           'border-radius-bottom-4',
           '只含下边框圆角，尺寸为4px',
-          `<p class="border-radius-bottom-4 bg-dark" style="width: 50px; height: 50px"></p>`
+          `<p class="border-radius-bottom-4 bg-e1e4e8" style="width: 50px; height: 50px"></p>`
         ]
       ]
     }
