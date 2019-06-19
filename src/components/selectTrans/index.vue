@@ -54,7 +54,12 @@ export default {
       this.$emit('breadcrumbName', this.breadcrumbName)
       this.selectedItem = []
       this.selectedItem.push(item)
-      this.$emit('selectedItem', this.selectedItem)
+      if (item.leaf === '1' || this.selectType === 'selectClass') {
+        this.$emit('selectedItem', this.selectedItem)
+      } else {
+        this.selectedItem = []
+        this.$emit('selectedItem', this.selectedItem)
+      }
       this.breadcrumbCSS = []
       this.breadcrumbList.forEach(el => {
         this.breadcrumbCSS.push(el.parentId)
@@ -95,7 +100,6 @@ export default {
     }).then(res => {
       this.allOptions.push(res.data)
     })
-    console.log(this.selectType, 'selectType')
   }
 }
 </script>

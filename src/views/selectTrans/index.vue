@@ -49,14 +49,14 @@ export default{
   data () {
     return {
       url: this.$service.listtree,
-      item: '',
+      item: '请注意是否设置了单选类格式',
       itemName: '',
       selectType: 'selectOne',
       activeName: 'first',
       headerData: ['参数', '说明', '类型', '值', '默认值'],
       radiusData: [
         ['url', '用于查询Api', 'String', '例 : this.$service.listtree 或者 "/category/list"', '无'],
-        ['selectType', '用于设置单选页子级类目、多选页子级类目、单选类格式', 'String', '单选页子级类目：selectOne、 多选页子级类目：selectMore、 单选类目：selectClass', 'selectOne']
+        ['selectType', '设置单选页子级类目、单选类格式', 'String', '只能单选页子级类目：selectOne、 单选类目或页子级类目：selectClass', 'selectOne']
       ],
       eventsHeader: ['事件名称', '说明', '形参'],
       eventsData: [
