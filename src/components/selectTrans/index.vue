@@ -2,19 +2,18 @@
   <div class="selectTrans">
       <div class="mt-12 border-outline searchBlock">
         <div class="listBlock" v-for="(blockMount,index) in allOptions" :key="blockMount.index">
-          <!-- <el-input class="searchList" placeholder="名称/拼音首字母" suffix-icon="el-icon-search"></el-input> -->
           <el-autocomplete
-            v-model="queryStringEnter"
+            v-model="queryStringEnter[index]"
             class="inline-input searchList"
             :fetch-suggestions="querySearch"
             placeholder="名称/拼音首字母"
             @select="handleSelect"
             value-key="name"
             suffix-icon="el-icon-search"
-            @focus="changeItemContent(allOptions[index].data)"
+            @focus="changeItemContent(allOptions[index].data,index)"
           ></el-autocomplete>
           <div class="mt-20 searchItemList">
-            <div v-for="(item,itemIndex) in allOptions[index].data" :key="item.index" @click="clickThis(item,index,itemIndex);" :class="activeSelect==itemIndex&&activeBlock==index?'activeSelect':''">{{item.name}}
+            <div v-for="(item) in allOptions[index].data" :key="item.index" @click="clickThis(item,index);" :class="breadcrumbCSS.indexOf(item.parentId)!=-1?'activeSelect':''">{{item.name}}
               <span class="float-right iconfont icon-erp-chevron-right" v-if="item.leaf==0"></span>
             </div>
           </div>
@@ -23,7 +22,7 @@
       <div class="breadcrumb p-8 pl-16 mt-12">
         <el-breadcrumb separator-class="el-icon-arrow-right" class="d-inline-block">
           <span class="float-left">已选类目：</span>
-          <el-breadcrumb-item v-for="item in breadcrumbList" :key="item">{{item}}</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="item in breadcrumbList" :key="item.index">{{item.name}}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
   </div>
@@ -31,31 +30,30 @@
 <script>
 export default {
   props: {
-    // dialogVisible: Boolean
     url: String
   },
   data () {
     return {
-      queryStringEnter: '',
-      activeBlock: null,
-      activeSelect: null,
+      currentIndex: null,
+      queryStringEnter: [],
       allOptions: [],
       suggesList: [],
       breadcrumbList: [],
+      breadcrumbCSS: [],
       selectedItem: []
     }
   },
   methods: {
-    clickThis (item, index, itemIndex) {
-      this.activeBlock = index
-      this.activeSelect = itemIndex
+    clickThis (item, index) {
       this.breadcrumbList.splice(index)
-      this.breadcrumbList.push(item.name)
+      this.breadcrumbList.push(item)
       this.selectedItem = []
       this.selectedItem.push(item)
       this.$emit('selectedItem', this.selectedItem)
-      // console.log(item, 'itemthis')
-      // console.log(index, '当前点击的数组下标')
+      this.breadcrumbCSS = []
+      this.breadcrumbList.forEach(el => {
+        this.breadcrumbCSS.push(el.parentId)
+      })
       let thisIndex = index + 1
       this.allOptions.splice(thisIndex)
       const that = this
@@ -63,33 +61,27 @@ export default {
         that.$http.post(that.$service.listtree, {
           parentId: item.parentId
         }).then(res => {
-          // console.log(res.data.data, 'res')
           that.allOptions.push(res.data)
         })
       }
     },
     // 搜索建议
-    changeItemContent (data) {
-      // console.log('被调用', data)
+    changeItemContent (data, index) {
       this.suggesList = data
+      this.currentIndex = index
     },
     querySearch (queryString, cb) {
       var suggesList = this.suggesList
-      // console.log(suggesList, 'suggesList')
       var results = queryString ? suggesList.filter(this.createFilter(queryString)) : suggesList
-      // 调用 callback 返回建议列表的数据
       cb(results)
     },
     createFilter (queryString) {
       return (suggesList) => {
-        // console.log(suggesList, 'suggesList333')
         return (suggesList.name.toLowerCase().indexOf(queryString.toLowerCase()) === 0)
       }
     },
     handleSelect (item) {
-    },
-    run () {
-      alert('这是自组建的法国')
+      this.clickThis(item, this.currentIndex)
     }
   },
   mounted () {

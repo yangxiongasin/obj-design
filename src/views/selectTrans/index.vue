@@ -45,9 +45,9 @@ export default{
       url: this.$service.listtree,
       item: '',
       activeName: 'first',
-      headerData: ['参数', '说明', '类型', '可选值', '默认值'],
+      headerData: ['参数', '说明', '类型', '值', '默认值'],
       radiusData: [
-        ['url', '用于查询Api', 'String', 'click, focus, hover', 'click']
+        ['url', '用于查询Api', 'String', '例 : this.$service.listtree 或者 "/category/list"', '无']
       ],
       eventsHeader: ['事件名称', '说明', '形参'],
       eventsData: [
@@ -57,9 +57,11 @@ export default{
   },
   computed: {
   },
+  mounted () {
+    console.log(this.$service.listtree)
+  },
   methods: {
     itemInSelectArr (data) {
-      console.log(data, '当前选中的数据')
       this.item = data
     }
   }
