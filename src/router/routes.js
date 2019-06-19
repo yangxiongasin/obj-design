@@ -52,9 +52,9 @@ export default [{
     component: require('../views/typography')
   },
   {
-    name: 'leftTree',
-    path: '/leftTree',
-    component: require('../views/leftTree')
+    name: 'tree',
+    path: '/tree',
+    component: require('../views/tree')
   },
   {
     name: 'popover',

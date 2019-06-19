@@ -12,32 +12,35 @@
         ><pre v-text="text1" class="text-18 color-primary"></pre
       ></code>
       <div>
-        <obj-left-tree
-          ref="leftTree"
+        <obj-tree
+          ref="ocjtree"
+          type="default"
           :http_treedata="$http_treeData"
           @getCurrentId="$com_currentId"
           @checkData="$com_checkData"
-        ></obj-left-tree>
+        ></obj-tree>
         <el-button size="small" @click="reset">重新加载</el-button>
       </div>
     </div>
+    <div class="d-flex mt-20 border-outline">
+      <div class="flex-ju-al-center text-16">http_treedata提供数据回调方法示例</div>
+      <code class=" pr-40 mr-40 border-right"
+      ><pre v-text="text3" class="text-18 color-primary"></pre
+      ></code>
+    </div>
     <h3 class="mb-8 mt-20">样式更改</h3>
-    <h4 class="color-light">showCheckbox：是否显示多选框，默认显示</h4>
-    <h4 class="color-light">showIcon：是否显示ICON，默认显示</h4>
-    <h4 class="color-light">uniformColor：是否统一字体颜色，默认为false</h4>
+    <h4 class="color-light">type: 包含默认模式（default）和简单模式（simple）</h4>
     <div class="d-flex mt-20 border-outline">
       <code class=" pr-40 mr-40 border-right"
         ><pre v-text="text2" class="text-18 color-primary"></pre
       ></code>
-      <obj-left-tree
-        ref="leftTree2"
-        :showCheckbox="false"
-        :showIcon="false"
-        :uniformColor="true"
+      <obj-tree
+        ref="ocjtree2"
+        type="simple"
         :http_treedata="$http_treeData"
         @getCurrentId="$com_currentId"
         @checkData="$com_checkData"
-      ></obj-left-tree>
+      ></obj-tree>
     </div>
     <el-tabs v-model="activeName" class="mt-40">
       <el-tab-pane label="属性" name="first">
@@ -64,26 +67,30 @@ export default {
     return {
       activeName: 'first',
       currentId: '',
-      text1: `<obj-left-tree
-  ref="leftTree"
+      text1: `<obj-tree
+  ref="ocjtree"
   :http_treedata="$http_treeData"
   @getCurrentId="$com_currentId"
   @checkData="$com_checkData">
-</obj-left-tree>`,
-      text2: `<obj-left-tree
-  ref="leftTree"
-  :showCheckbox="false"
-  :showIcon="false"
-  :uniformColor="true"
+</obj-tree>`,
+      text2: `<obj-tree
+  ref="ocjtree"
   :http_treedata="$http_treeData"
   @getCurrentId="$com_currentId"
   @checkData="$com_checkData">
-</obj-left-tree>`,
+</obj-tree>`,
+      text3: `HTML:
+:http_treedata="$http_treeData"
+JS:
+$http_treeData (func) {
+  this.$http.post(this.$service.listtree, { parentId: this.currentId, }).then(res => {
+    if (res.data.data.length <= 0) return
+    func(res.data.data || [])
+  })
+},`,
       headerData: ['属性', '说明', '类型', '默认值'],
       bodyData: [
-        ['showCheckbox', '是否显示复选框', 'Boolean', 'false'],
-        ['showIcon', '是否显示ICON图标', 'Boolean', 'false'],
-        ['uniformColor', '文本颜色是否保持一致', 'Boolean', 'true'],
+        ['type', '选择模式，有默认（default）和简单（simple）两种形式', 'String', 'default'],
         [
           'http_treedata',
           '请求Tree数据的方法，入参为function，<br>需要在获取数据后将数据作为入参传入入参函数',
@@ -108,23 +115,18 @@ export default {
   },
   methods: {
     reset () {
-      this.$refs.leftTree.reset()
+      this.$refs.ocjtree.reset()
     },
     $http_treeData (func) {
       const that = this
-      that.$http
-        .post(that.$service.listtree, {
-          parentId: this.currentId,
-          search: '',
-          boolean: true
-        })
-        .then(res => {
-          let data = res.data.data
-          if (res.data.data.length <= 0) {
-            return false
-          }
-          func(data || [])
-        })
+      that.$http.post(that.$service.listtree, {
+        parentId: this.currentId,
+        search: '',
+        boolean: true
+      }).then(res => {
+        if (res.data.data.length <= 0) return
+        func(res.data.data || [])
+      })
     },
     $com_currentId (id) {
       this.currentId = id
