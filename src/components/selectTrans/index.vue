@@ -24,9 +24,6 @@
         <el-breadcrumb separator-class="el-icon-arrow-right" class="d-inline-block">
           <span class="float-left">已选类目：</span>
           <el-breadcrumb-item v-for="item in breadcrumbList" :key="item">{{item}}</el-breadcrumb-item>
-          <!-- <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-          <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-          <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
         </el-breadcrumb>
       </div>
   </div>
@@ -35,6 +32,7 @@
 export default {
   props: {
     // dialogVisible: Boolean
+    url: String
   },
   data () {
     return {
@@ -43,7 +41,8 @@ export default {
       activeSelect: null,
       allOptions: [],
       suggesList: [],
-      breadcrumbList: []
+      breadcrumbList: [],
+      selectedItem: []
     }
   },
   methods: {
@@ -52,8 +51,11 @@ export default {
       this.activeSelect = itemIndex
       this.breadcrumbList.splice(index)
       this.breadcrumbList.push(item.name)
-      console.log(item, 'itemthis')
-      console.log(index, '当前点击的数组下标')
+      this.selectedItem = []
+      this.selectedItem.push(item)
+      this.$emit('selectedItem', this.selectedItem)
+      // console.log(item, 'itemthis')
+      // console.log(index, '当前点击的数组下标')
       let thisIndex = index + 1
       this.allOptions.splice(thisIndex)
       const that = this
@@ -61,40 +63,40 @@ export default {
         that.$http.post(that.$service.listtree, {
           parentId: item.parentId
         }).then(res => {
-          console.log(res.data.data, 'res')
+          // console.log(res.data.data, 'res')
           that.allOptions.push(res.data)
         })
       }
     },
     // 搜索建议
     changeItemContent (data) {
-      console.log('被调用', data)
+      // console.log('被调用', data)
       this.suggesList = data
     },
     querySearch (queryString, cb) {
       var suggesList = this.suggesList
-      console.log(suggesList, 'suggesList')
+      // console.log(suggesList, 'suggesList')
       var results = queryString ? suggesList.filter(this.createFilter(queryString)) : suggesList
       // 调用 callback 返回建议列表的数据
       cb(results)
     },
     createFilter (queryString) {
       return (suggesList) => {
-        console.log(suggesList, 'suggesList333')
+        // console.log(suggesList, 'suggesList333')
         return (suggesList.name.toLowerCase().indexOf(queryString.toLowerCase()) === 0)
       }
     },
     handleSelect (item) {
-      console.log(item, '搜索建议中的handleSelect')
+    },
+    run () {
+      alert('这是自组建的法国')
     }
   },
   mounted () {
-    this.$http.post(this.$service.listtree, {
+    this.$http.post(this.url, {
       parentId: ''
     }).then(res => {
-      console.log(res.data.data, 'res')
       this.allOptions.push(res.data)
-      console.log(this.allOptions, 'this.allOptions')
     })
   }
 }
