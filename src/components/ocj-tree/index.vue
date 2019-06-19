@@ -9,7 +9,7 @@
     :expand-on-click-node="false"
     lazy
     accordion
-    :show-checkbox="showCheckbox"
+    :show-checkbox="showCheckbox || type === 'default'"
     :render-content="$com_renderContent"
     @node-click="$com_clickTree"
     @check-change="$com_checkChange"
@@ -18,22 +18,18 @@
 </template>
 <script>
 export default {
-  name: 'leftTree',
+  name: 'ocj-tree',
   props: {
     http_treedata: {
       type: Function
     },
     showCheckbox: {
       type: Boolean,
-      default: true
-    },
-    showIcon: {
-      type: Boolean,
-      default: true
-    },
-    uniformColor: {
-      type: Boolean,
       default: false
+    },
+    type: {
+      type: String,
+      default: 'default'
     }
   },
   data () {
@@ -92,19 +88,19 @@ export default {
         [
           h('span', {
             class: {
-              'color-alert': node.isLeaf && data.online === '0',
-              'color-error': node.isLeaf && data.status === '0',
+              'color-ffad0d': node.isLeaf && data.online === '0',
+              'color-f03d3d': node.isLeaf && data.status === '0',
               'icon-erp-alert-triangle': node.isLeaf && data.status === '0',
               'icon-erp-eye-off': node.isLeaf && data.online === '0',
               'text-18': true,
               'cursor-not-allowed':
-                node.isLeaf && data.status === '0' && !that.uniformColor,
+                node.isLeaf && data.status === '0' && that.type === 'default',
               'mr-4': true
             }
           })
         ]
       )
-      if (!that.showIcon) icon = ''
+      if (that.type === 'simple') icon = ''
       return h(
         'div',
         {
@@ -118,13 +114,15 @@ export default {
             'span',
             {
               class: {
-                'color-light': !node.isLeaf || that.uniformColor,
-                'color-medium': node.isLeaf && !that.uniformColor,
-                'color-input':
-                  node.isLeaf && data.status === '0' && !that.uniformColor,
+                'color-53627c': !node.isLeaf || that.type === 'simple',
+                'color-2d3f5f': node.isLeaf && that.type === 'default',
+                'text-weight-bold':
+                  node.isLeaf && that.type === 'default' && data.status !== '0',
+                'color-a6aebc':
+                  node.isLeaf && data.status === '0' && that.type === 'default',
                 'text-14': true,
                 'cursor-not-allowed':
-                  node.isLeaf && data.status === '0' && !that.uniformColor
+                  node.isLeaf && data.status === '0' && that.type === 'default'
               }
             },
             node.label

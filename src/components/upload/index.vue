@@ -15,7 +15,6 @@
       :on-error="$com_imgUploadError"
       :before-upload="$com_beforeAvatarUpload"
     >
-
       <i class="el-icon-plus"></i>
       <div
         class="el-upload__text text-12 color-dark"

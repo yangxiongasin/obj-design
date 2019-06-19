@@ -2,19 +2,18 @@
   <div class="selectTrans">
       <div class="mt-12 border-outline searchBlock">
         <div class="listBlock" v-for="(blockMount,index) in allOptions" :key="blockMount.index">
-          <!-- <el-input class="searchList" placeholder="名称/拼音首字母" suffix-icon="el-icon-search"></el-input> -->
           <el-autocomplete
-            v-model="queryStringEnter"
+            v-model="queryStringEnter[index]"
             class="inline-input searchList"
             :fetch-suggestions="querySearch"
             placeholder="名称/拼音首字母"
             @select="handleSelect"
             value-key="name"
             suffix-icon="el-icon-search"
-            @focus="changeItemContent(allOptions[index].data)"
+            @focus="changeItemContent(allOptions[index].data,index)"
           ></el-autocomplete>
           <div class="mt-20 searchItemList">
-            <div v-for="(item,itemIndex) in allOptions[index].data" :key="item.index" @click="clickThis(item,index,itemIndex);" :class="activeSelect==itemIndex&&activeBlock==index?'activeSelect':''">{{item.name}}
+            <div v-for="(item) in allOptions[index].data" :key="item.index" @click="clickThis(item,index);" :class="breadcrumbCSS.indexOf(item.parentId)!=-1?'activeSelect':''">{{item.name}}
               <span class="float-right iconfont icon-erp-chevron-right" v-if="item.leaf==0"></span>
             </div>
           </div>
@@ -23,10 +22,7 @@
       <div class="breadcrumb p-8 pl-16 mt-12">
         <el-breadcrumb separator-class="el-icon-arrow-right" class="d-inline-block">
           <span class="float-left">已选类目：</span>
-          <el-breadcrumb-item v-for="item in breadcrumbList" :key="item">{{item}}</el-breadcrumb-item>
-          <!-- <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-          <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-          <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
+          <el-breadcrumb-item v-for="item in breadcrumbName" :key="item.index">{{item}}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
   </div>
@@ -34,26 +30,40 @@
 <script>
 export default {
   props: {
-    // dialogVisible: Boolean
+    url: String,
+    selectType: String
   },
   data () {
     return {
-      queryStringEnter: '',
-      activeBlock: null,
-      activeSelect: null,
+      currentIndex: null,
+      queryStringEnter: [],
       allOptions: [],
       suggesList: [],
-      breadcrumbList: []
+      breadcrumbList: [],
+      breadcrumbCSS: [],
+      breadcrumbName: [],
+      selectedItem: []
     }
   },
   methods: {
-    clickThis (item, index, itemIndex) {
-      this.activeBlock = index
-      this.activeSelect = itemIndex
+    clickThis (item, index) {
       this.breadcrumbList.splice(index)
-      this.breadcrumbList.push(item.name)
-      console.log(item, 'itemthis')
-      console.log(index, '当前点击的数组下标')
+      this.breadcrumbList.push(item)
+      this.breadcrumbName.splice(index)
+      this.breadcrumbName.push(item.name)
+      this.$emit('breadcrumbName', this.breadcrumbName)
+      this.selectedItem = []
+      this.selectedItem.push(item)
+      if (item.leaf === '1' || this.selectType === 'selectClass') {
+        this.$emit('selectedItem', this.selectedItem)
+      } else {
+        this.selectedItem = []
+        this.$emit('selectedItem', this.selectedItem)
+      }
+      this.breadcrumbCSS = []
+      this.breadcrumbList.forEach(el => {
+        this.breadcrumbCSS.push(el.parentId)
+      })
       let thisIndex = index + 1
       this.allOptions.splice(thisIndex)
       const that = this
@@ -61,40 +71,34 @@ export default {
         that.$http.post(that.$service.listtree, {
           parentId: item.parentId
         }).then(res => {
-          console.log(res.data.data, 'res')
           that.allOptions.push(res.data)
         })
       }
     },
     // 搜索建议
-    changeItemContent (data) {
-      console.log('被调用', data)
+    changeItemContent (data, index) {
       this.suggesList = data
+      this.currentIndex = index
     },
     querySearch (queryString, cb) {
       var suggesList = this.suggesList
-      console.log(suggesList, 'suggesList')
       var results = queryString ? suggesList.filter(this.createFilter(queryString)) : suggesList
-      // 调用 callback 返回建议列表的数据
       cb(results)
     },
     createFilter (queryString) {
       return (suggesList) => {
-        console.log(suggesList, 'suggesList333')
         return (suggesList.name.toLowerCase().indexOf(queryString.toLowerCase()) === 0)
       }
     },
     handleSelect (item) {
-      console.log(item, '搜索建议中的handleSelect')
+      this.clickThis(item, this.currentIndex)
     }
   },
   mounted () {
-    this.$http.post(this.$service.listtree, {
+    this.$http.post(this.url, {
       parentId: ''
     }).then(res => {
-      console.log(res.data.data, 'res')
       this.allOptions.push(res.data)
-      console.log(this.allOptions, 'this.allOptions')
     })
   }
 }

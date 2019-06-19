@@ -71,6 +71,11 @@ export default {
           `<p class="color-ffad0d">文字颜色</p>`
         ],
         [
+          'color-2d3f5f',
+          '#2d3f5f (用法：主要标题、正文文本)',
+          `<p class="color-2d3f5f">文字颜色</p>`
+        ],
+        [
           'color-0a1f44',
           '#0A1F44 (用法：主要标题、正文文本)',
           `<p class="color-0a1f44">文字颜色</p>`

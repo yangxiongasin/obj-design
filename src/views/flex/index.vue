@@ -54,6 +54,11 @@ export default {
           'd-flex-column',
           ' 垂直排列',
           `<p>display: flex;</p><p>flex-direction: column;</p>`
+        ],
+        [
+          'flex-auto',
+          '自动占满剩余空间',
+          `<p>display: flex;</p><p>flex: auto;</p>`
         ]
       ],
       bodyData2: [

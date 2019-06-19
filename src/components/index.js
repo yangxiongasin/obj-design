@@ -1,13 +1,13 @@
 // ✨✨✨
 import objTable from './table/index.js'
 import objPopover from './popover/index.js'
-import objLeftTree from './objLeftTree/index.js'
+import objTree from './ocj-tree/index.js'
 import selectTrans from './selectTrans/index.js'
 import objUpload from './upload/index.js'
 let components = {
   objTable,
   objPopover,
-  objLeftTree,
+  objTree,
   selectTrans,
   objUpload
 }

@@ -61,8 +61,8 @@ export default {
           src: 'typography'
         },
         {
-          name: 'leftTree',
-          src: 'leftTree'
+          name: 'tree',
+          src: 'tree'
         },
         {
           name: 'popover 弹出框',
@@ -80,7 +80,7 @@ export default {
     }
   },
   mounted () {
-    this.$router.replace({ name: 'leftTree' })
+    this.$router.replace({ name: 'tree' })
   },
   methods: {
     $on_toggleLi (data, index) {
