@@ -9,10 +9,7 @@
       class="my-8"
     ></obj-table>
     <h3 class="mt-20 mb-8">非常用flex类名</h3>
-    <obj-table
-      :thead-data="headerData"
-      :tbody-data="bodyData2"
-    ></obj-table>
+    <obj-table :thead-data="headerData" :tbody-data="bodyData2"></obj-table>
   </div>
 </template>
 

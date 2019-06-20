@@ -1,7 +1,10 @@
 <template>
   <div class="popover">
     <h3 class="mt-20 mb-8">popover 类型</h3>
-    <h4 class="mt-16 mb-16 color-light">注意：触发 popover 插入 slot 时，需修改 slot 名：原 elementUI 的 popover 组件值 reference 改为 ocj_reference </h4>
+    <h4 class="mt-16 mb-16 color-light">
+      注意：触发 popover 插入 slot 时，需修改 slot 名：原 elementUI 的 popover
+      组件值 reference 改为 ocj_reference
+    </h4>
     <div class="d-flex flex-ju-bet">
       <code class="pr-40 pb-40 mr-40 border-right">
         <pre class="color-primary text-16">{{ typeCode }}</pre>
@@ -11,18 +14,20 @@
         ocj-content="是否确认启用属性？"
         type="primary"
         @ok="$com_ok"
-        @cancel="$com_cancel">
+        @cancel="$com_cancel"
+      >
         <el-button slot="ocj_reference">click 激活</el-button>
       </obj-popover>
     </div>
     <h3 class="mt-20 mb-8">自行插入slot内容</h3>
-    <h4 class="mt-16 mb-16 color-light">注意：内容区域插入 slot 时，需带上 slot 名：ocj_content</h4>
+    <h4 class="mt-16 mb-16 color-light">
+      注意：内容区域插入 slot 时，需带上 slot 名：ocj_content
+    </h4>
     <div class="d-flex flex-ju-bet">
       <code class="pr-40 pb-40 mr-40 border-right">
         <pre class="color-primary text-16">{{ slotCode }}</pre>
       </code>
-      <obj-popover
-        type="error">
+      <obj-popover>
         <div slot="ocj_content">自行插入slot的内容</div>
         <el-button slot="ocj_reference">click 激活</el-button>
       </obj-popover>
@@ -51,7 +56,7 @@
   </div>
 </template>
 <script>
-export default{
+export default {
   data () {
     return {
       obj_visible: false,
@@ -62,20 +67,8 @@ export default{
       showIcon: true,
       headerData: ['参数', '说明', '类型', '可选值', '默认值'],
       radiusData: [
-        [
-          'trigger',
-          '触发条件',
-          'String',
-          'click, focus, hover',
-          'click'
-        ],
-        [
-          'ocj-title',
-          '标题',
-          'String',
-          '-',
-          '-'
-        ],
+        ['trigger', '触发条件', 'String', 'click, focus, hover', 'click'],
+        ['ocj-title', '标题', 'String', '-', '-'],
         [
           'ocj-content',
           '插入内容；当利用slot传值时，该属性不具插值作用，组件内部沿用slot插入的值',
@@ -83,20 +76,8 @@ export default{
           '-',
           '-'
         ],
-        [
-          'width',
-          '宽度',
-          'String，Boolean',
-          '-',
-          '249'
-        ],
-        [
-          'show-footer',
-          '是否展现底部按钮',
-          'Boolean',
-          '-',
-          'true'
-        ],
+        ['width', '宽度', 'String，Boolean', '-', '249'],
+        ['show-footer', '是否展现底部按钮', 'Boolean', '-', 'true'],
         [
           'show-cancel-btn',
           '是否展现底部按钮中取消按钮',
@@ -111,22 +92,10 @@ export default{
           'primary, success, error, warning',
           'primary'
         ],
-        [
-          'show-icon',
-          '是否展现标题处icon',
-          'Boolean',
-          '-',
-          'true'
-        ]
+        ['show-icon', '是否展现标题处icon', 'Boolean', '-', 'true']
       ],
       radiusData1: [
-        [
-          'ocj-title',
-          '标题',
-          'String',
-          '-',
-          '-'
-        ],
+        ['ocj-title', '标题', 'String', '-', '-'],
         [
           'ocj-content',
           '插入内容；当利用slot传值时，该属性不具插值作用，组件内部沿用slot插入的值',
@@ -144,16 +113,8 @@ export default{
       ],
       eventsHeader: ['事件名称', '说明', '回调参数'],
       eventsData: [
-        [
-          'ok',
-          '点击确定时触发',
-          '-'
-        ],
-        [
-          'cancel',
-          '点击取消时触发',
-          '-'
-        ]
+        ['ok', '点击确定时触发', '-'],
+        ['cancel', '点击取消时触发', '-']
       ],
       typeCode: `
     <obj-popover
@@ -165,15 +126,13 @@ export default{
       <el-button slot="ocj_reference">click 激活</el-button>
     </obj-popover>`,
       slotCode: `
-    <obj-popover
-      type="error">
+    <obj-popover>
       <div slot="ocj_content">自行插入slot的内容</div>
       <el-button slot="ocj_reference">click 激活</el-button>
     </obj-popover>`
     }
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     $com_cancel () {
       console.log('cancel')
@@ -184,6 +143,4 @@ export default{
   }
 }
 </script>
-<style>
-
-</style>
+<style></style>
