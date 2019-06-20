@@ -12,7 +12,7 @@
       <obj-popover
         ocj-title="属性启用"
         ocj-content="是否确认启用属性？"
-        type="error"
+        type="primary"
         @ok="$com_ok"
         @cancel="$com_cancel"
       >
