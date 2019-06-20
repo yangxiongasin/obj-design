@@ -7,8 +7,6 @@
     <h4 class="color-light">http_treedata提供数据回调方法</h4>
     <h4 class="color-light">getCurrentId获取当前点击数据ID</h4>
     <h4 class="color-light">checkData获取当前选中状态data数组集合</h4>
-    <i class="o-icon icon-jiaoyi"></i>
-    <i class="iconfont icon-jiaoyi"></i>
     <div class="d-flex border-outline mt-20">
       <code class=" pr-40 mr-40 border-right"
         ><pre v-text="text1" class="text-18 color-primary"></pre
