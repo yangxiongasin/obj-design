@@ -16,8 +16,7 @@
     @hide="$com_hide"
     @after-leave="$com_afterLeave">
     <div v-if="ocjTitle" class="flex-al-center text-16 text-weight-bold color-0a1f44 mb-8">
-      <!--<i class="o-icon popover-icon mr-8" :class="icon.iconClass">{{ icon.iconHtml }}</i>-->
-      <i class="o-icon">&#xe719;</i>
+      <i class="o-icon popover-icon mr-8" :class="icon.iconClass" v-html="icon.iconHtml"></i>
       <span>{{ ocjTitle }}</span>
     </div>
     <slot name="ocj_content">
