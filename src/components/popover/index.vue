@@ -16,7 +16,7 @@
     @hide="$com_hide"
     @after-leave="$com_afterLeave">
     <div v-if="ocjTitle" class="flex-al-center text-16 text-weight-bold color-0a1f44 mb-8">
-      <i :class="iconClass"></i>
+      <i class="o-icon popover-icon mr-8" :class="icon.iconClass" v-html="icon.iconHtml"></i>
       <span>{{ ocjTitle }}</span>
     </div>
     <slot name="ocj_content">
@@ -115,16 +115,28 @@ export default{
         return 150
       }
     },
-    iconClass () {
+    icon () {
       if (this.showIcon) {
         if (this.type === 'primary') {
-          return ['icon-erp-info', 'color-0c66ff', 'popover-icon', 'mr-8']
+          return {
+            iconClass: 'color-0c66ff',
+            iconHtml: '&#xe719;'
+          }
         } else if (this.type === 'error') {
-          return ['icon-erp-help-circle', 'color-0bb07b', 'popover-icon', 'mr-8']
+          return {
+            iconClass: 'color-f03d3d',
+            iconHtml: '&#xe712;'
+          }
         } else if (this.type === 'warning') {
-          return ['icon-erp-help-circle', 'color-f03d3d', 'popover-icon', 'mr-8']
+          return {
+            iconClass: 'color-ffad0d',
+            iconHtml: '&#xe712;'
+          }
         } else if (this.type === 'success') {
-          return ['icon-erp-help-circle', 'color-ffad0d', 'popover-icon', 'mr-8']
+          return {
+            iconClass: 'color-0bb07b',
+            iconHtml: '&#xe719;'
+          }
         }
       }
     },
