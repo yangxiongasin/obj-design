@@ -124,17 +124,17 @@ export default{
           }
         } else if (this.type === 'error') {
           return {
-            iconClass: 'color-0c66ff',
+            iconClass: 'color-f03d3d',
             iconHtml: '&#xe712;'
           }
         } else if (this.type === 'warning') {
           return {
-            iconClass: 'color-0c66ff',
+            iconClass: 'color-ffad0d',
             iconHtml: '&#xe712;'
           }
         } else if (this.type === 'success') {
           return {
-            iconClass: 'color-0c66ff',
+            iconClass: 'color-0bb07b',
             iconHtml: '&#xe719;'
           }
         }
