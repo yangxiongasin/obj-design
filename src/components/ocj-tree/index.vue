@@ -70,11 +70,14 @@ export default {
     $com_renderContent (h, { node, data }) {
       const that = this
       let icontooltip = ''
+      let iconText = ''
       // 如果是叶子类目并且是禁用状态
       if (node.isLeaf && data.online === '0') {
         icontooltip = '未上线'
+        iconText = '&#xe708;'
       } else if (node.isLeaf && data.status === '0') {
         icontooltip = '已禁用'
+        iconText = '&#xe69b;'
       }
       let icon = h(
         'el-tooltip',
@@ -90,17 +93,21 @@ export default {
             class: {
               'color-ffad0d': node.isLeaf && data.online === '0',
               'color-f03d3d': node.isLeaf && data.status === '0',
-              'icon-erp-alert-triangle': node.isLeaf && data.status === '0',
-              'icon-erp-eye-off': node.isLeaf && data.online === '0',
+              'o-icon': true,
               'text-18': true,
               'cursor-not-allowed':
                 node.isLeaf && data.status === '0' && that.type === 'default',
               'mr-4': true
+            },
+            domProps: {
+              innerHTML: iconText
             }
           })
         ]
       )
-      if (that.type === 'simple') icon = ''
+      if (that.type === 'simple') {
+        icon = ''
+      }
       return h(
         'div',
         {
