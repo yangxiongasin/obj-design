@@ -14,7 +14,7 @@
           ></el-autocomplete>
           <div class="mt-20 searchItemList">
             <div v-for="(item) in allOptions[index].data" :key="item.index" @click="clickThis(item,index);" :class="breadcrumbCSS.indexOf(item.parentId)!=-1?'activeSelect':''">{{item.name}}
-              <span class="float-right iconfont icon-erp-chevron-right" v-if="item.leaf==0"></span>
+              <span class="float-right o-icon" v-if="item.leaf==0">&#xe6d2;</span>
             </div>
           </div>
         </div>
