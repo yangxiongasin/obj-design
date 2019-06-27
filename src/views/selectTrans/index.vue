@@ -9,7 +9,7 @@
     <select-trans
     @selectedItem="selectedItem"
     @breadcrumbName="breadcrumbName"
-    :selectType="selectOne"
+    :selectType="selectType"
     :url="url"
     ></select-trans>
 
@@ -76,7 +76,7 @@ export default{
       ></select-trans>`,
       desc: [
         'selectedItem (data) {console.log(data)} 获取当前选中项的数据、数组格式返回',
-        'breadcrumbName (data) {this.itemName = data} 获取当前选中项路径 (面包屑) 的数据、数组格式返回',
+        'breadcrumbName (data) {console.log(data)} 获取当前选中项路径 (面包屑) 的数据、数组格式返回',
         'selectType 传入不同代码改变获取数据的模式',
         'url 为查询数据的api'
       ]

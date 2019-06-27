@@ -55,8 +55,10 @@ export default {
       this.selectedItem = []
       this.selectedItem.push(item)
       if (item.leaf === '1' || this.selectType === 'selectClass') {
+        // console.log('"123333"')
         this.$emit('selectedItem', this.selectedItem)
       } else {
+        // console.log('"123344443"', this.selectType)
         this.selectedItem = []
         this.$emit('selectedItem', this.selectedItem)
       }
@@ -67,7 +69,7 @@ export default {
       let thisIndex = index + 1
       this.allOptions.splice(thisIndex)
       const that = this
-      if (item.leaf === '0') {
+      if (item.leaf === 0) {
         that.$http.post(that.$service.listtree, {
           parentId: item.parentId
         }).then(res => {
