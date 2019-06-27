@@ -54,7 +54,7 @@ export default {
       this.$emit('breadcrumbName', this.breadcrumbName)
       this.selectedItem = []
       this.selectedItem.push(item)
-      if (item.leaf === '1' || this.selectType === 'selectClass') {
+      if (item.leaf === 1 || this.selectType === 'selectClass') {
         // console.log('"123333"')
         this.$emit('selectedItem', this.selectedItem)
       } else {
