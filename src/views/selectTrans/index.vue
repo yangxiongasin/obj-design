@@ -1,12 +1,16 @@
 <template>
   <div>
-
+    <div class="d-flex flex-ju-bet">
+      <code class="pr-40 pb-40 mt-40">
+        <pre class="color-primary text-16">{{ typeCode }}</pre>
+      </code>
+    </div>
+    <div class="m-20 h4" v-for="item in desc" :key="item">{{item}}</div>
     <select-trans
     @selectedItem="selectedItem"
     @breadcrumbName="breadcrumbName"
     :selectType="selectType"
     :url="url"
-    ref="sts"
     ></select-trans>
 
     <div class="mt-20">
@@ -62,6 +66,19 @@ export default{
       eventsData: [
         ['selectedItem', '获取当前选中的项的数据', 'data'],
         ['breadcrumbName', '获取当前选中的面包屑数据', 'data']
+      ],
+      typeCode: `
+      <select-trans
+      @selectedItem="selectedItem"
+      @breadcrumbName="breadcrumbName"
+      :selectType="selectOne" //或selectClass(文档中有说明)
+      :url="url"
+      ></select-trans>`,
+      desc: [
+        'selectedItem (data) {console.log(data)} 获取当前选中项的数据、数组格式返回',
+        'breadcrumbName (data) {console.log(data)} 获取当前选中项路径 (面包屑) 的数据、数组格式返回',
+        'selectType 传入不同代码改变获取数据的模式',
+        'url 为查询数据的api'
       ]
     }
   },
