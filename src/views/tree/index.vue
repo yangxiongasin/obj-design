@@ -16,8 +16,8 @@
           ref="ocjtree"
           type="default"
           :http_treedata="$http_treeData"
-          @getCurrentId="$com_currentId"
-          @checkData="$com_checkData"
+          @getCurrentId="$comCurrentId"
+          @checkData="$comCheckData"
         ></obj-tree>
         <el-button size="small" @click="reset">重新加载</el-button>
       </div>
@@ -38,8 +38,8 @@
         ref="ocjtree2"
         type="simple"
         :http_treedata="$http_treeData"
-        @getCurrentId="$com_currentId"
-        @checkData="$com_checkData"
+        @getCurrentId="$comCurrentId"
+        @checkData="$comCheckData"
       ></obj-tree>
     </div>
     <el-tabs v-model="activeName" class="mt-40">
@@ -70,14 +70,14 @@ export default {
       text1: `<obj-tree
   ref="ocjtree"
   :http_treedata="$http_treeData"
-  @getCurrentId="$com_currentId"
-  @checkData="$com_checkData">
+  @getCurrentId="$comCurrentId"
+  @checkData="$comCheckData">
 </obj-tree>`,
       text2: `<obj-tree
   ref="ocjtree"
   :http_treedata="$http_treeData"
-  @getCurrentId="$com_currentId"
-  @checkData="$com_checkData">
+  @getCurrentId="$comCurrentId"
+  @checkData="$comCheckData">
 </obj-tree>`,
       text3: `HTML:
 :http_treedata="$http_treeData"
@@ -128,10 +128,10 @@ $http_treeData (func) {
         func(res.data.data || [])
       })
     },
-    $com_currentId (id) {
+    $comCurrentId (id) {
       this.currentId = id
     },
-    $com_checkData (data) {
+    $comCheckData (data) {
       console.log(data, 'demo')
     }
   }

@@ -1,6 +1,6 @@
 
 // 静态配置对象，此对象在 /static/conf/app-conf.js 内配置
-const appConf = 'http://10.221.56.94/mock/49/'
+const appConf = 'http://10.221.56.94/mock/'
 
 /**
  * 服务调用对象配置

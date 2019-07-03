@@ -61,6 +61,10 @@ export default {
           src: 'typography'
         },
         {
+          name: 'table',
+          src: 'table'
+        },
+        {
           name: 'tree',
           src: 'tree'
         },

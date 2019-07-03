@@ -3,16 +3,16 @@
   <el-tree
     ref="leftTree"
     :props="treeProps"
-    :load="$com_loadNode"
+    :load="$comLoadNode"
     empty-text=""
     node-key="id"
     :expand-on-click-node="false"
     lazy
     accordion
     :show-checkbox="showCheckbox || type === 'default'"
-    :render-content="$com_renderContent"
-    @node-click="$com_clickTree"
-    @check-change="$com_checkChange"
+    :render-content="$comRenderContent"
+    @node-click="$comClickTree"
+    @check-change="$comCheckChange"
   >
   </el-tree>
 </template>
@@ -38,7 +38,7 @@ export default {
         label: 'name', // 指定节点标签为节点对象的某个属性值
         children: 'childs', // 指定子树为节点对象的某个属性值
         isLeaf: (data, node) => {
-          if (data.leaf === '1') return true
+          if (data.leaf === 1) return true
           return false
         } // 是否为叶子节点
       },
@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     // 判断当前节点是否包含子节点
-    $com_loadNode (node, resolve) {
+    $comLoadNode (node, resolve) {
       const that = this
       that.func = resolve
       if (node.isLeaf) return
@@ -62,20 +62,20 @@ export default {
       }
     },
     // 传递给 data 属性的数组中该节点所对应的对象、节点本身是否被选中、节点的子树中是否有被选中的节点
-    $com_checkChange () {
+    $comCheckChange () {
       const datas = this.$refs.leftTree.getCheckedNodes()
       this.$emit('checkData', datas)
     },
     // render自定义样式渲染
-    $com_renderContent (h, { node, data }) {
+    $comRenderContent (h, { node, data }) {
       const that = this
       let icontooltip = ''
       let iconText = ''
       // 如果是叶子类目并且是禁用状态
-      if (node.isLeaf && data.online === '0') {
+      if (node.isLeaf && data.online === 0) {
         icontooltip = '未上线'
         iconText = '&#xe708;'
-      } else if (node.isLeaf && data.status === '0') {
+      } else if (node.isLeaf && data.status === 0) {
         icontooltip = '已禁用'
         iconText = '&#xe69b;'
       }
@@ -91,12 +91,12 @@ export default {
         [
           h('span', {
             class: {
-              'color-ffad0d': node.isLeaf && data.online === '0',
-              'color-f03d3d': node.isLeaf && data.status === '0',
+              'color-ffad0d': node.isLeaf && data.online === 0,
+              'color-f03d3d': node.isLeaf && data.status === 0,
               'o-icon': true,
               'text-18': true,
               'cursor-not-allowed':
-                node.isLeaf && data.status === '0' && that.type === 'default',
+                node.isLeaf && data.status === 0 && that.type === 'default',
               'mr-4': true
             },
             domProps: {
@@ -124,12 +124,12 @@ export default {
                 'color-53627c': !node.isLeaf || that.type === 'simple',
                 'color-2d3f5f': node.isLeaf && that.type === 'default',
                 'text-weight-bold':
-                  node.isLeaf && that.type === 'default' && data.status !== '0',
+                  node.isLeaf && that.type === 'default' && data.status !== 0,
                 'color-a6aebc':
-                  node.isLeaf && data.status === '0' && that.type === 'default',
+                  node.isLeaf && data.status === 0 && that.type === 'default',
                 'text-14': true,
                 'cursor-not-allowed':
-                  node.isLeaf && data.status === '0' && that.type === 'default'
+                  node.isLeaf && data.status === 0 && that.type === 'default'
               }
             },
             node.label
@@ -138,13 +138,13 @@ export default {
       )
     },
     // 传递给 data 属性的数组中该节点所对应的对象、节点对应的 Node、节点组件本身。
-    $com_clickTree (data, node, store) {
+    $comClickTree (data, node, store) {
       this.$emit('getCurrentId', data.id)
     },
     reset () {
       this.$emit('getCurrentId', '')
       this.grandNode.childNodes = []
-      this.$com_loadNode(this.grandNode, this.func)
+      this.$comLoadNode(this.grandNode, this.func)
     }
   }
 }
