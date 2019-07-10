@@ -15,13 +15,13 @@
     @after-enter="$com_afterEnter"
     @hide="$com_hide"
     @after-leave="$com_afterLeave">
-    <div v-if="ocjTitle" class="flex-al-center text-16 text-weight-bold color-0a1f44 mb-8">
+    <div v-if="title" class="flex-al-center text-16 text-weight-bold color-0a1f44 mb-8">
       <i class="o-icon popover-icon mr-8" :class="icon.iconClass" v-html="icon.iconHtml"></i>
-      <span>{{ ocjTitle }}</span>
+      <span>{{ title }}</span>
     </div>
-    <slot name="ocj_content">
+    <slot name="content">
       <div class="text-14 color-8a94a6">
-        {{ ocjContent }}
+        {{ content }}
       </div>
     </slot>
     <div class="popover-footer text-right mt-16" v-if="showFooter">
@@ -42,12 +42,12 @@ export default{
       default: 'click',
       validator: value => ['click', 'focus', 'hover'].indexOf(value) > -1
     },
-    ocjContent: String,
+    content: String,
     width: {
       type: [String, Number],
       default: 249
     },
-    ocjTitle: String,
+    title: String,
     placement: {
       type: String,
       default: 'bottom'

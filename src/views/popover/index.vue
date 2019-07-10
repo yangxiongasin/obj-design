@@ -10,13 +10,13 @@
         <pre class="color-primary text-16">{{ typeCode }}</pre>
       </code>
       <obj-popover
-        ocj-title="属性启用"
-        ocj-content="是否确认启用属性？"
+        title="属性启用"
+        content="是否确认启用属性？"
         type="primary"
         @ok="$com_ok"
         @cancel="$com_cancel"
       >
-        <el-button slot="ocj_reference">click 激活</el-button>
+        <el-button>click 激活</el-button>
       </obj-popover>
     </div>
     <h3 class="mt-20 mb-8">自行插入slot内容</h3>
@@ -28,8 +28,8 @@
         <pre class="color-primary text-16">{{ slotCode }}</pre>
       </code>
       <obj-popover>
-        <div slot="ocj_content">自行插入slot的内容</div>
-        <el-button slot="ocj_reference">click 激活</el-button>
+        <div slot="content">自行插入slot的内容</div>
+        <el-button>click 激活</el-button>
       </obj-popover>
     </div>
     <el-tabs v-model="activeName" class="mt-40">
