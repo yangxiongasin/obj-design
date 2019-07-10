@@ -29,7 +29,7 @@
       <el-button type="primary" size="mini" :class="typeClass" @click="$on_ok">确定</el-button>
     </div>
     <span class="d-inline-block" slot="reference">
-      <slot name="ocj_reference"></slot>
+      <slot></slot>
     </span>
   </el-popover>
 </template>
