@@ -14,9 +14,17 @@
     @show="$com_show"
     @after-enter="$com_afterEnter"
     @hide="$com_hide"
-    @after-leave="$com_afterLeave">
-    <div v-if="title" class="flex-al-center text-16 text-weight-bold color-0a1f44 mb-8">
-      <i class="o-icon popover-icon mr-8" :class="icon.iconClass" v-html="icon.iconHtml"></i>
+    @after-leave="$com_afterLeave"
+  >
+    <div
+      v-if="title"
+      class="flex-al-center text-16 text-weight-bold color-0a1f44 mb-8"
+    >
+      <i
+        class="o-icon popover-icon mr-8"
+        :class="icon.iconClass"
+        v-html="icon.iconHtml"
+      ></i>
       <span>{{ title }}</span>
     </div>
     <slot name="content">
@@ -25,8 +33,16 @@
       </div>
     </slot>
     <div class="popover-footer text-right mt-16" v-if="showFooter">
-      <el-button v-if="showCancelBtn" class="border-outline bg-white" size="mini" @click="$on_cancel">取消</el-button>
-      <el-button type="primary" size="mini" :class="typeClass" @click="$on_ok">确定</el-button>
+      <el-button
+        v-if="showCancelBtn"
+        class="border-outline bg-white"
+        size="mini"
+        @click="$on_cancel"
+        >取消</el-button
+      >
+      <el-button type="primary" size="mini" :class="typeClass" @click="$on_ok"
+        >确定</el-button
+      >
     </div>
     <span class="d-inline-block" slot="reference">
       <slot></slot>
@@ -116,29 +132,31 @@ export default{
       }
     },
     icon () {
+      let iconType = null
       if (this.showIcon) {
         if (this.type === 'primary') {
-          return {
+          iconType = {
             iconClass: 'color-0c66ff',
             iconHtml: '&#xe719;'
           }
         } else if (this.type === 'error') {
-          return {
+          iconType = {
             iconClass: 'color-f03d3d',
             iconHtml: '&#xe712;'
           }
         } else if (this.type === 'warning') {
-          return {
+          iconType = {
             iconClass: 'color-ffad0d',
             iconHtml: '&#xe712;'
           }
         } else if (this.type === 'success') {
-          return {
+          iconType = {
             iconClass: 'color-0bb07b',
             iconHtml: '&#xe719;'
           }
         }
       }
+      return iconType
     },
     typeClass () {
       return [
